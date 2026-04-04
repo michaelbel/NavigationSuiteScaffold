@@ -1,9 +1,11 @@
+
 import java.nio.charset.StandardCharsets
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 private val gitCommitsCount: Int by lazy {
@@ -25,11 +27,11 @@ kotlin {
 }
 
 android {
-    namespace = "org.michaelbel.vibefeature"
+    namespace = "org.michaelbel.nss"
     compileSdk = libs.versions.compile.sdk.get().toInt()
 
     defaultConfig {
-        applicationId = "org.michaelbel.vibefeature"
+        applicationId = "org.michaelbel.nss"
         minSdk = libs.versions.min.sdk.get().toInt()
         targetSdk = libs.versions.target.sdk.get().toInt()
         versionCode = gitCommitsCount
@@ -38,7 +40,7 @@ android {
 
     signingConfigs {
         getByName("debug") {
-            keyAlias = "myapplication"
+            keyAlias = "template"
             keyPassword = "password"
             storeFile = rootProject.file(".github/debug-key.jks")
             storePassword = "password"
@@ -47,25 +49,52 @@ android {
 
     buildTypes {
         debug {
+            isDebuggable = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("debug")
         }
     }
 
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
 
 base {
-    archivesName.set("VibeFeature-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})")
+    archivesName.set("NavigationSuiteScaffold-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
 }
 
 dependencies {
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.google.material)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.foundation.layout)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.adaptive)
+    implementation(libs.androidx.compose.material3.adaptive.layout)
+    implementation(libs.androidx.compose.material3.adaptive.navigation)
+    implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.androidx.paging.compose)
+    implementation(libs.androidx.window)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.androidx.compose.material3.windowsize)
 }
 
 tasks.register("printVersion") {
