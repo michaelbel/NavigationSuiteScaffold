@@ -9,9 +9,10 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationItemIconPosition
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
+import androidx.compose.material3.ShortNavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
@@ -24,10 +25,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import org.michaelbel.nss.Tabs
 import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
 import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
 import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.main.settings.SettingsScreen
-import org.michaelbel.nss.Tabs
 
 @Composable
 fun MainScreen(
@@ -84,7 +85,7 @@ fun MainScreen(
                     BottomAppBar(
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        NavigationBarItem(
+                        ShortNavigationBarItem(
                             selected = selectedTab == Tabs.Home,
                             onClick = { selectedTab = Tabs.Home },
                             icon = {
@@ -97,10 +98,11 @@ fun MainScreen(
                                 Text(
                                     text = "Home"
                                 )
-                            }
+                            },
+                            iconPosition = NavigationItemIconPosition.Start
                         )
 
-                        NavigationBarItem(
+                        ShortNavigationBarItem(
                             selected = selectedTab == Tabs.Settings,
                             onClick = { selectedTab = Tabs.Settings },
                             icon = {
@@ -113,10 +115,11 @@ fun MainScreen(
                                 Text(
                                     text = "Settings"
                                 )
-                            }
+                            },
+                            iconPosition = NavigationItemIconPosition.Start
                         )
 
-                        NavigationBarItem(
+                        ShortNavigationBarItem(
                             selected = selectedTab == Tabs.About,
                             onClick = { selectedTab = Tabs.About },
                             icon = {
@@ -129,7 +132,8 @@ fun MainScreen(
                                 Text(
                                     text = "About"
                                 )
-                            }
+                            },
+                            iconPosition = NavigationItemIconPosition.Start
                         )
                     }
                 }
