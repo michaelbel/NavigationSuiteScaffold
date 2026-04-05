@@ -3,11 +3,10 @@
 package org.michaelbel.nss.sample1_Scaffold_BottomBar.main.about
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -66,7 +65,8 @@ fun AboutScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = bottomPadding
-            )
+            ),
+            verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
                 ListItem(
@@ -77,8 +77,7 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Star on GitHub",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Star on GitHub"
                         )
                     },
                     leadingContent = {
@@ -90,11 +89,6 @@ fun AboutScreen(
                 )
             }
             item {
-                Spacer(
-                    modifier = Modifier.height(2.dp)
-                )
-            }
-            item {
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -103,8 +97,7 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Telegram Channel",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Telegram Channel"
                         )
                     },
                     leadingContent = {

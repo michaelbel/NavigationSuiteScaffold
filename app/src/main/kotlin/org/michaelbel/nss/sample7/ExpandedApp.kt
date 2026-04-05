@@ -1,4 +1,4 @@
-package org.michaelbel.nss.expanded
+package org.michaelbel.nss.sample7
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -13,8 +13,8 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.expanded.details.DetailsScreen
-import org.michaelbel.nss.expanded.main.MainScreen
+import org.michaelbel.nss.sample7.details.DetailsScreen
+import org.michaelbel.nss.sample7.main.MainScreen
 
 @Composable
 fun ExpandedApp() {

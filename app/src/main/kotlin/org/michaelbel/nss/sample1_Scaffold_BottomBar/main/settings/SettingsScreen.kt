@@ -3,6 +3,7 @@
 package org.michaelbel.nss.sample1_Scaffold_BottomBar.main.settings
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -34,9 +35,9 @@ import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
 @Composable
 fun SettingsScreen(
-    bottomPadding: Dp,
+    bottomPadding: Dp
 ) {
-    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
+    val dynamicColors by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
@@ -66,19 +67,19 @@ fun SettingsScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = bottomPadding
-            )
+            ),
+            verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
-                        .clickable { AppSettings.setDynamicColors(!dynamicColorsEnabled) },
+                        .clickable { AppSettings.setDynamicColors(!dynamicColors) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Dynamic Colors",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Dynamic Colors"
                         )
                     },
                     leadingContent = {
@@ -89,7 +90,7 @@ fun SettingsScreen(
                     },
                     trailingContent = {
                         Switch(
-                            checked = dynamicColorsEnabled,
+                            checked = dynamicColors,
                             onCheckedChange = null
                         )
                     }

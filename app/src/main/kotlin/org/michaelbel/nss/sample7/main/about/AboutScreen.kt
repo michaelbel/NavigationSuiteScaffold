@@ -1,13 +1,15 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package org.michaelbel.nss.expanded.main.settings
+package org.michaelbel.nss.sample7.main.about
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,28 +21,26 @@ import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScaffoldDefaults
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.michaelbel.nss.AppSettings
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FormatPaint
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.bottomListItemShape
+import org.michaelbel.nss.Github
+import org.michaelbel.nss.Telegram
+import org.michaelbel.nss.topListItemShape
 
 @Composable
-fun SettingsScreen(
+fun AboutScreen(
     isSideNavigation: Boolean
 ) {
-    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val uriHandler = LocalUriHandler.current
     val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
 
     Scaffold(
@@ -52,7 +52,7 @@ fun SettingsScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Settings"
+                        text = "About"
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -77,25 +77,45 @@ fun SettingsScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable { AppSettings.setDynamicColors(!dynamicColorsEnabled) },
+                        .clip(topListItemShape)
+                        .clickable { uriHandler.openUri("https://github.com/michaelbel") },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Dynamic Colors",
+                            text = "Star on GitHub",
                             style = MaterialTheme.typography.titleLarge
                         )
                     },
                     leadingContent = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatPaint,
+                            imageVector = Github,
                             contentDescription = null
                         )
+                    }
+                )
+            }
+            item {
+                Spacer(
+                    modifier = Modifier.height(2.dp)
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable { uriHandler.openUri("https://t.me/android_career") },
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    headlineContent = {
+                        Text(
+                            text = "Telegram Channel",
+                            style = MaterialTheme.typography.titleLarge
+                        )
                     },
-                    trailingContent = {
-                        Switch(
-                            checked = dynamicColorsEnabled,
-                            onCheckedChange = null
+                    leadingContent = {
+                        Icon(
+                            imageVector = Telegram,
+                            contentDescription = null
                         )
                     }
                 )

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.nss.expanded.main
+package org.michaelbel.nss.sample7.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
@@ -24,9 +24,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.michaelbel.nss.expanded.main.about.AboutScreen
-import org.michaelbel.nss.expanded.main.home.HomeScreen
-import org.michaelbel.nss.expanded.main.settings.SettingsScreen
+import org.michaelbel.nss.sample7.main.about.AboutScreen
+import org.michaelbel.nss.sample7.main.home.HomeScreen
+import org.michaelbel.nss.sample7.main.settings.SettingsScreen
 import org.michaelbel.nss.Tabs
 
 @Composable
