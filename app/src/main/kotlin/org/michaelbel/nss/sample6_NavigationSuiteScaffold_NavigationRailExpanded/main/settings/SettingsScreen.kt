@@ -36,7 +36,7 @@ import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
 @Composable
 fun SettingsScreen(
-    isNavigationRail: Boolean,
+    isNavigationRail: Boolean
 ) {
     val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
@@ -81,8 +81,7 @@ fun SettingsScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Dynamic Colors",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Dynamic Colors"
                         )
                     },
                     supportingContent = {

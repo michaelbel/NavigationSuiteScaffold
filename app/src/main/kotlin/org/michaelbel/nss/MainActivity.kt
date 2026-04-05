@@ -20,11 +20,11 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                val index = 1
+                val index = 2
                 when (index) {
                     0 -> Sample01App()
-
                     1 -> Sample02App()
+
                     2 -> Sample3App()
                     3 -> Sample4App()
                     4 -> Sample5App()

@@ -16,15 +16,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import org.michaelbel.nss.boarList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import org.michaelbel.nss.BoarCard
+import org.michaelbel.nss.boarList
 
 @Composable
 fun HomeScreen(
-    onNavigateToDetails: (Int) -> Unit,
+    onNavigateToDetails: (Int) -> Unit
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 

@@ -3,13 +3,12 @@
 package org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.main.about
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -29,9 +28,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import org.michaelbel.nss.bottomListItemShape
 import org.michaelbel.nss.Github
 import org.michaelbel.nss.Telegram
+import org.michaelbel.nss.bottomListItemShape
 import org.michaelbel.nss.topListItemShape
 
 @Composable
@@ -70,7 +69,8 @@ fun AboutScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = if (isNavigationRail) navBarBottom else 16.dp
-            )
+            ),
+            verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
                 ListItem(
@@ -81,8 +81,7 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Star on GitHub",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Star on GitHub"
                         )
                     },
                     leadingContent = {
@@ -94,11 +93,6 @@ fun AboutScreen(
                 )
             }
             item {
-                Spacer(
-                    modifier = Modifier.height(2.dp)
-                )
-            }
-            item {
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -107,8 +101,7 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Telegram Channel",
-                            style = MaterialTheme.typography.titleLarge
+                            text = "Telegram Channel"
                         )
                     },
                     leadingContent = {

@@ -4,14 +4,13 @@ package org.michaelbel.nss.sample7.details
 
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -33,9 +32,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.Boar
 import org.michaelbel.nss.boarList
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
@@ -43,7 +40,7 @@ import org.michaelbel.nss.middleLargeIncreasedListItemShape
 fun DetailsScreen(
     route: AppRoute.Details
 ) {
-    val boar: Boar = boarList.first { it.id == route.boarId }
+    val boar = boarList.first { it.id == route.boarId }
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
@@ -88,11 +85,12 @@ fun DetailsScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = navBarBottom
-            )
+            ),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
                 Image(
-                    painter = painterResource(id = boar.drawableRes),
+                    painter = painterResource(boar.drawableRes),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -102,14 +100,9 @@ fun DetailsScreen(
                 )
             }
             item {
-                Spacer(
-                    modifier = Modifier.height(16.dp)
-                )
-            }
-            item {
                 Text(
                     text = boar.description,
-                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = 18.sp)
+                    style = MaterialTheme.typography.bodyLarge
                 )
             }
         }

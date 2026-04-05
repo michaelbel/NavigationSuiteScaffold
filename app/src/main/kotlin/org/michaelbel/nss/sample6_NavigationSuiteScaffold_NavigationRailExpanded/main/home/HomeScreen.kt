@@ -27,7 +27,7 @@ import org.michaelbel.nss.boarList
 @Composable
 fun HomeScreen(
     isNavigationRail: Boolean,
-    onNavigateToDetails: (Int) -> Unit,
+    onNavigateToDetails: (Int) -> Unit
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
