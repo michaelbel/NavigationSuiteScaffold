@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main
+package org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.main
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
@@ -20,9 +20,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import org.michaelbel.nss.Tabs
-import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
-import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
-import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.settings.SettingsScreen
+import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
+import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
+import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.main.settings.SettingsScreen
 
 @Composable
 fun MainScreen(
