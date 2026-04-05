@@ -10,6 +10,7 @@ import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.Sample02App
 import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.Sample03App
 import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.Sample04App
 import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRailExpanded.Sample05App
+import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded_State.Sample06App
 
 class MainActivity: ComponentActivity() {
 
@@ -27,7 +28,8 @@ class MainActivity: ComponentActivity() {
                     3 -> Sample04App()
 
                     4 -> Sample05App()
-                    5 -> NavigationSuiteScaffoldSample()
+                    5 -> Sample06App()
+                    6 -> NavigationSuiteScaffoldSample()
                 }
             }
         }
