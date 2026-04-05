@@ -77,7 +77,7 @@ fun SettingsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
-                        .clickable { AppSettings.setDynamicColors(!dynamicColorsEnabled) },
+                        .clickable(onClick = AppSettings::toggleDynamicColors),
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
@@ -87,8 +87,7 @@ fun SettingsScreen(
                     },
                     supportingContent = {
                         Text(
-                            text = "Apply colors from Wallpaper",
-                            style = MaterialTheme.typography.bodyMedium
+                            text = "Apply colors from Wallpaper"
                         )
                     },
                     leadingContent = {

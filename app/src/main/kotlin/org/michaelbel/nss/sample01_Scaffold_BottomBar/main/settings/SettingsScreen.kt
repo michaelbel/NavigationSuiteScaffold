@@ -73,7 +73,7 @@ fun SettingsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
-                        .clickable { AppSettings.setDynamicColors(!dynamicColors) },
+                        .clickable(onClick = AppSettings::toggleDynamicColors),
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(

@@ -6,10 +6,10 @@ import kotlinx.coroutines.flow.asStateFlow
 
 object AppSettings {
 
-    private val _dynamicColorsEnabled = MutableStateFlow(false)
-    val dynamicColorsFlow: StateFlow<Boolean> = _dynamicColorsEnabled.asStateFlow()
+    private val _dynamicColorsFlow = MutableStateFlow(false)
+    val dynamicColorsFlow: StateFlow<Boolean> = _dynamicColorsFlow.asStateFlow()
 
-    fun setDynamicColors(enabled: Boolean) {
-        _dynamicColorsEnabled.value = enabled
+    fun toggleDynamicColors() {
+        _dynamicColorsFlow.value = !dynamicColorsFlow.value
     }
 }
