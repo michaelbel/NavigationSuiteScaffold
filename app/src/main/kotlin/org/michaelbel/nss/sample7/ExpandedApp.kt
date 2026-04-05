@@ -7,7 +7,6 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
@@ -25,10 +24,7 @@ fun ExpandedApp() {
         modifier = Modifier.fillMaxSize(),
         popTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
         predictivePopTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
-        entryDecorators = listOf(
-            rememberSaveableStateHolderNavEntryDecorator(),
-            rememberViewModelStoreNavEntryDecorator()
-        ),
+        entryDecorators = listOf(rememberSaveableStateHolderNavEntryDecorator()),
         entryProvider = entryProvider {
             entry<AppRoute.Home> {
                 MainScreen(
