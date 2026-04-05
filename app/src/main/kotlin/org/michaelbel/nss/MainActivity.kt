@@ -23,8 +23,8 @@ class MainActivity: ComponentActivity() {
                 when (index) {
                     0 -> Sample01App()
                     1 -> Sample02App()
-
                     2 -> Sample03App()
+
                     4 -> Sample5App()
                     5 -> Sample6App()
                     6 -> NavigationSuiteScaffoldSample()
