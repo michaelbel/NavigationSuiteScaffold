@@ -63,7 +63,7 @@ android {
 }
 
 base {
-    archivesName.set("NavigationSuiteScaffold-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})") // fixme Replace with your own app's name
+    archivesName.set("NavigationSuiteScaffold-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})")
 }
 
 dependencies {
