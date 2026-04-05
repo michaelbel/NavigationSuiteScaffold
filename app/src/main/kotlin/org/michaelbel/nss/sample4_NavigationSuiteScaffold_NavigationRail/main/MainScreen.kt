@@ -10,6 +10,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteItem
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
@@ -18,10 +19,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import org.michaelbel.nss.Tabs
 import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
 import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
 import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.main.settings.SettingsScreen
-import org.michaelbel.nss.Tabs
 
 @Composable
 fun MainScreen(
@@ -34,9 +35,8 @@ fun MainScreen(
     val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed
 
     NavigationSuiteScaffold(
-        layoutType = navigationSuiteType,
-        navigationSuiteItems = {
-            item(
+        navigationItems = {
+            NavigationSuiteItem(
                 selected = selectedTab == Tabs.Home,
                 onClick = { selectedTab = Tabs.Home },
                 icon = {
@@ -52,7 +52,7 @@ fun MainScreen(
                 }
             )
 
-            item(
+            NavigationSuiteItem(
                 selected = selectedTab == Tabs.Settings,
                 onClick = { selectedTab = Tabs.Settings },
                 icon = {
@@ -68,7 +68,7 @@ fun MainScreen(
                 }
             )
 
-            item(
+            NavigationSuiteItem(
                 selected = selectedTab == Tabs.About,
                 onClick = { selectedTab = Tabs.About },
                 icon = {
@@ -83,7 +83,8 @@ fun MainScreen(
                     )
                 }
             )
-        }
+        },
+        navigationSuiteType = navigationSuiteType
     ) {
         when (selectedTab) {
             Tabs.Home -> {
