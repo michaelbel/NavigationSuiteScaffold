@@ -42,10 +42,10 @@ fun MainScreen(
         else -> NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
     }
     val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed || navigationSuiteType == NavigationSuiteType.WideNavigationRailExpanded
-    val navigationSuiteScaffoldState = rememberNavigationSuiteScaffoldState()
+    val state = rememberNavigationSuiteScaffoldState()
 
     LaunchedEffect(navigationVisible) {
-        if (navigationVisible) navigationSuiteScaffoldState.show() else navigationSuiteScaffoldState.hide()
+        if (navigationVisible) state.show() else state.hide()
     }
 
     NavigationSuiteScaffold(
@@ -102,7 +102,7 @@ fun MainScreen(
             )
         },
         navigationSuiteType = navigationSuiteType,
-        state = navigationSuiteScaffoldState
+        state = state
     ) {
         when (selectedTab) {
             Tabs.Home -> {
