@@ -3,6 +3,7 @@
 package org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded_State.main.settings
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.FormatPaint
+import androidx.compose.material.icons.outlined.Splitscreen
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -32,11 +34,14 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.michaelbel.nss.AppSettings
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.bottomListItemShape
+import org.michaelbel.nss.topListItemShape
 
 @Composable
 fun SettingsScreen(
-    isNavigationRail: Boolean
+    isNavigationRail: Boolean,
+    navigationVisible: Boolean,
+    onToggleNavigation: () -> Unit
 ) {
     val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
@@ -70,13 +75,14 @@ fun SettingsScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = if (isNavigationRail) navBarBottom else 16.dp
-            )
+            ),
+            verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
+                        .clip(topListItemShape)
                         .clickable(onClick = AppSettings::toggleDynamicColors),
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
@@ -98,6 +104,37 @@ fun SettingsScreen(
                     trailingContent = {
                         Switch(
                             checked = dynamicColorsEnabled,
+                            onCheckedChange = null
+                        )
+                    }
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable(onClick = onToggleNavigation),
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    headlineContent = {
+                        Text(
+                            text = "Navigation Visibility"
+                        )
+                    },
+                    supportingContent = {
+                        Text(
+                            text = "Show or hide navigation bar"
+                        )
+                    },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Outlined.Splitscreen,
+                            contentDescription = null
+                        )
+                    },
+                    trailingContent = {
+                        Switch(
+                            checked = navigationVisible,
                             onCheckedChange = null
                         )
                     }
