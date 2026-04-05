@@ -11,6 +11,7 @@ import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.Sample
 import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.Sample04App
 import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRailExpanded.Sample05App
 import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded_State.Sample06App
+import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationSuite.Sample07App
 
 class MainActivity: ComponentActivity() {
 
@@ -20,7 +21,7 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                val index = 5
+                val index = 6
                 when (index) {
                     0 -> Sample01App()
                     1 -> Sample02App()
@@ -28,6 +29,7 @@ class MainActivity: ComponentActivity() {
                     3 -> Sample04App()
                     4 -> Sample05App()
                     5 -> Sample06App()
+                    6 -> Sample07App()
                 }
             }
         }
