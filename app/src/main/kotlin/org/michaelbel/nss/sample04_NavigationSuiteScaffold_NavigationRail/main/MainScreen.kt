@@ -30,8 +30,7 @@ fun MainScreen(
 ) {
     var selectedTab by rememberSaveable(stateSaver = Tabs.Saver) { mutableStateOf(Tabs.Home) }
 
-    val windowAdaptiveInfo = currentWindowAdaptiveInfo()
-    val navigationSuiteType = NavigationSuiteScaffoldDefaults.navigationSuiteType(windowAdaptiveInfo)
+    val navigationSuiteType = NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
     val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed
 
     NavigationSuiteScaffold(
