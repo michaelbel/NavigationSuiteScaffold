@@ -1,5 +1,6 @@
 package org.michaelbel.nss
 
+import androidx.compose.runtime.saveable.Saver
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable
 
@@ -23,4 +24,23 @@ sealed interface Tabs {
 
     @Serializable
     data object About: Tabs
+
+    companion object {
+        val Saver: Saver<Tabs, Int> = Saver(
+            save = { tab ->
+                when (tab) {
+                    Home -> 0
+                    Settings -> 1
+                    About -> 2
+                }
+            },
+            restore = { index ->
+                when (index) {
+                    1 -> Settings
+                    2 -> About
+                    else -> Home
+                }
+            }
+        )
+    }
 }

@@ -17,7 +17,6 @@ import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -30,24 +29,7 @@ import org.michaelbel.nss.Tabs
 fun MainScreen(
     onNavigateToDetails: (Int) -> Unit
 ) {
-    var selectedTab by rememberSaveable(
-        stateSaver = Saver(
-            save = { tab: Tabs ->
-                when (tab) {
-                    Tabs.Home -> 0
-                    Tabs.Settings -> 1
-                    Tabs.About -> 2
-                }
-            },
-            restore = { index: Int ->
-                when (index) {
-                    1 -> Tabs.Settings
-                    2 -> Tabs.About
-                    else -> Tabs.Home
-                }
-            }
-        )
-    ) { mutableStateOf(Tabs.Home) }
+    var selectedTab by rememberSaveable(stateSaver = Tabs.Saver) { mutableStateOf(Tabs.Home) }
 
     NavigationSuiteScaffold(
         navigationItems = {
