@@ -27,9 +27,7 @@ class MainActivity: ComponentActivity() {
                     2 -> Sample03App()
                     3 -> Sample04App()
                     4 -> Sample05App()
-
                     5 -> Sample06App()
-                    6 -> NavigationSuiteScaffoldSample()
                 }
             }
         }
