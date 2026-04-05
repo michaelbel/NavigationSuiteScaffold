@@ -39,9 +39,7 @@ import org.michaelbel.nss.topListItemShape
 
 @Composable
 fun SettingsScreen(
-    isNavigationRail: Boolean,
-    navigationVisible: Boolean,
-    onToggleNavigation: () -> Unit
+    isNavigationRail: Boolean
 ) {
     val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle()
     val navigationVisible by AppSettings.navigationVisibleFlow.collectAsStateWithLifecycle()
@@ -115,37 +113,6 @@ fun SettingsScreen(
                     headlineContent = {
                         Text(
                             text = "Navigation Visibility"
-                        )
-                    },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Icons.Outlined.Splitscreen,
-                            contentDescription = null
-                        )
-                    },
-                    trailingContent = {
-                        Switch(
-                            checked = navigationVisible,
-                            onCheckedChange = null
-                        )
-                    }
-                )
-            }
-            item {
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable(onClick = onToggleNavigation),
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Navigation Visibility"
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            text = "Show or hide navigation bar"
                         )
                     },
                     leadingContent = {
