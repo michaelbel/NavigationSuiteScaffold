@@ -31,7 +31,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.michaelbel.nss.AppSettings
-import org.michaelbel.nss.Github
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FormatPaint
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
 @Composable
@@ -85,15 +86,9 @@ fun SettingsScreen(
                             style = MaterialTheme.typography.titleLarge
                         )
                     },
-                    supportingContent = {
-                        Text(
-                            text = "Apply colors from Wallpaper",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    },
                     leadingContent = {
                         Icon(
-                            imageVector = Github,
+                            imageVector = Icons.Outlined.FormatPaint,
                             contentDescription = null
                         )
                     },

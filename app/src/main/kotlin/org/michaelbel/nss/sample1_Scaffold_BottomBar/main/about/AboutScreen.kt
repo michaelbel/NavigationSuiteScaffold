@@ -27,9 +27,9 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import org.michaelbel.nss.bottomListItemShape
 import org.michaelbel.nss.Github
 import org.michaelbel.nss.Telegram
+import org.michaelbel.nss.bottomListItemShape
 import org.michaelbel.nss.topListItemShape
 
 @Composable
@@ -77,14 +77,8 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "GitHub",
+                            text = "Star on GitHub",
                             style = MaterialTheme.typography.titleLarge
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            text = "View the Repository",
-                            style = MaterialTheme.typography.bodyMedium
                         )
                     },
                     leadingContent = {
@@ -109,14 +103,8 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Telegram",
+                            text = "Telegram Channel",
                             style = MaterialTheme.typography.titleLarge
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            text = "Subscribe to Channel",
-                            style = MaterialTheme.typography.bodyMedium
                         )
                     },
                     leadingContent = {

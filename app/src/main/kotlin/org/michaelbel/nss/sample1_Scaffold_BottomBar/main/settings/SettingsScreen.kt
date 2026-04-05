@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FormatPaint
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -20,7 +22,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import org.michaelbel.nss.AppSettings
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,7 +29,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.michaelbel.nss.Github
+import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
 @Composable
@@ -80,15 +81,9 @@ fun SettingsScreen(
                             style = MaterialTheme.typography.titleLarge
                         )
                     },
-                    supportingContent = {
-                        Text(
-                            text = "Apply colors from Wallpaper",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    },
                     leadingContent = {
                         Icon(
-                            imageVector = Github,
+                            imageVector = Icons.Outlined.FormatPaint,
                             contentDescription = null
                         )
                     },

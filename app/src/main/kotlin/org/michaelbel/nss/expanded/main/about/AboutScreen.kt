@@ -82,14 +82,8 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "GitHub",
+                            text = "Star on GitHub",
                             style = MaterialTheme.typography.titleLarge
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            text = "View the Repository",
-                            style = MaterialTheme.typography.bodyMedium
                         )
                     },
                     leadingContent = {
@@ -114,14 +108,8 @@ fun AboutScreen(
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     headlineContent = {
                         Text(
-                            text = "Telegram",
+                            text = "Telegram Channel",
                             style = MaterialTheme.typography.titleLarge
-                        )
-                    },
-                    supportingContent = {
-                        Text(
-                            text = "Subscribe to Channel",
-                            style = MaterialTheme.typography.bodyMedium
                         )
                     },
                     leadingContent = {
