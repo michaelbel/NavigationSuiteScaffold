@@ -5,12 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import org.michaelbel.nss.step1_Scaffold_BottomBar.Step1App
-import org.michaelbel.nss.step2_NavigationSuiteScaffold_BottomBar.Step2App
-import org.michaelbel.nss.step3_NavigationSuiteScaffold_BottomBar.Step3App
-import org.michaelbel.nss.step4_NavigationSuiteScaffold_NavigationRail.Step4App
-import org.michaelbel.nss.step5_NavigationSuiteScaffold_NavigationRail.Step5App
-import org.michaelbel.nss.step6_NavigationSuiteScaffold_NavigationRailExpanded.Step6App
+import org.michaelbel.nss.sample1_Scaffold_BottomBar.Sample1App
+import org.michaelbel.nss.sample2_NavigationSuiteScaffold_BottomBar.Sample2App
+import org.michaelbel.nss.sample3_NavigationSuiteScaffold_BottomBar.Sample3App
+import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.Sample4App
+import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.Sample5App
+import org.michaelbel.nss.sample6_NavigationSuiteScaffold_NavigationRailExpanded.Sample6App
 
 class MainActivity: ComponentActivity() {
 
@@ -22,12 +22,12 @@ class MainActivity: ComponentActivity() {
             AppTheme {
                 val index = 5
                 when (index) {
-                    0 -> Step1App()
-                    1 -> Step2App()
-                    2 -> Step3App()
-                    3 -> Step4App()
-                    4 -> Step5App()
-                    5 -> Step6App()
+                    0 -> Sample1App()
+                    1 -> Sample2App()
+                    2 -> Sample3App()
+                    3 -> Sample4App()
+                    4 -> Sample5App()
+                    5 -> Sample6App()
                     6 -> NavigationSuiteScaffoldSample()
                 }
             }
