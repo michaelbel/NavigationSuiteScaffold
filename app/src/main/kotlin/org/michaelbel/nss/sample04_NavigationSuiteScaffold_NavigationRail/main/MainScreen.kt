@@ -2,11 +2,14 @@
 
 package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationRail
+import androidx.compose.material3.NavigationRailItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.ExperimentalMaterial3AdaptiveApi
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
@@ -19,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import org.michaelbel.nss.Tabs
 import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.about.AboutScreen
 import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.home.HomeScreen
@@ -35,53 +39,95 @@ fun MainScreen(
 
     NavigationSuiteScaffold(
         navigationItems = {
-            NavigationSuiteItem(
-                selected = selectedTab == Tabs.Home,
-                onClick = { selectedTab = Tabs.Home },
-                icon = {
-                    Icon(
-                        imageVector = Icons.Outlined.Home,
-                        contentDescription = null
-                    )
-                },
-                label = {
-                    Text(
-                        text = "Home"
-                    )
-                }
-            )
+            when {
+                isNavigationRail -> {
+                    NavigationRail(
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        NavigationRailItem(
+                            selected = selectedTab == Tabs.Home,
+                            onClick = { selectedTab = Tabs.Home },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Home,
+                                    contentDescription = null
+                                )
+                            }
+                        )
 
-            NavigationSuiteItem(
-                selected = selectedTab == Tabs.Settings,
-                onClick = { selectedTab = Tabs.Settings },
-                icon = {
-                    Icon(
-                        imageVector = Icons.Outlined.Settings,
-                        contentDescription = null
-                    )
-                },
-                label = {
-                    Text(
-                        text = "Settings"
-                    )
-                }
-            )
+                        NavigationRailItem(
+                            selected = selectedTab == Tabs.Settings,
+                            onClick = { selectedTab = Tabs.Settings },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Settings,
+                                    contentDescription = null
+                                )
+                            }
+                        )
 
-            NavigationSuiteItem(
-                selected = selectedTab == Tabs.About,
-                onClick = { selectedTab = Tabs.About },
-                icon = {
-                    Icon(
-                        imageVector = Icons.Outlined.Info,
-                        contentDescription = null
+                        NavigationRailItem(
+                            selected = selectedTab == Tabs.About,
+                            onClick = { selectedTab = Tabs.About },
+                            icon = {
+                                Icon(
+                                    imageVector = Icons.Outlined.Info,
+                                    contentDescription = null
+                                )
+                            }
+                        )
+                    }
+                }
+                else -> {
+                    NavigationSuiteItem(
+                        selected = selectedTab == Tabs.Home,
+                        onClick = { selectedTab = Tabs.Home },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Home,
+                                contentDescription = null
+                            )
+                        },
+                        label = {
+                            Text(
+                                text = "Home"
+                            )
+                        }
                     )
-                },
-                label = {
-                    Text(
-                        text = "About"
+
+                    NavigationSuiteItem(
+                        selected = selectedTab == Tabs.Settings,
+                        onClick = { selectedTab = Tabs.Settings },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Settings,
+                                contentDescription = null
+                            )
+                        },
+                        label = {
+                            Text(
+                                text = "Settings"
+                            )
+                        }
+                    )
+
+                    NavigationSuiteItem(
+                        selected = selectedTab == Tabs.About,
+                        onClick = { selectedTab = Tabs.About },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Outlined.Info,
+                                contentDescription = null
+                            )
+                        },
+                        label = {
+                            Text(
+                                text = "About"
+                            )
+                        }
                     )
                 }
-            )
+            }
         },
         navigationSuiteType = navigationSuiteType
     ) {
