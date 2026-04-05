@@ -43,7 +43,8 @@ fun SettingsScreen(
     navigationVisible: Boolean,
     onToggleNavigation: () -> Unit
 ) {
-    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
+    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle()
+    val navigationVisible by AppSettings.navigationVisibleFlow.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
 
@@ -90,11 +91,6 @@ fun SettingsScreen(
                             text = "Dynamic Colors"
                         )
                     },
-                    supportingContent = {
-                        Text(
-                            text = "Apply colors from Wallpaper"
-                        )
-                    },
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Outlined.FormatPaint,
@@ -104,6 +100,32 @@ fun SettingsScreen(
                     trailingContent = {
                         Switch(
                             checked = dynamicColorsEnabled,
+                            onCheckedChange = null
+                        )
+                    }
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable(onClick = AppSettings::toggleNavigationVisible),
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    headlineContent = {
+                        Text(
+                            text = "Navigation Visibility"
+                        )
+                    },
+                    leadingContent = {
+                        Icon(
+                            imageVector = Icons.Outlined.Splitscreen,
+                            contentDescription = null
+                        )
+                    },
+                    trailingContent = {
+                        Switch(
+                            checked = navigationVisible,
                             onCheckedChange = null
                         )
                     }

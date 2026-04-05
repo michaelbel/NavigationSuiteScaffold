@@ -38,7 +38,7 @@ import org.michaelbel.nss.middleLargeIncreasedListItemShape
 fun SettingsScreen(
     isNavigationRail: Boolean
 ) {
-    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
+    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
 

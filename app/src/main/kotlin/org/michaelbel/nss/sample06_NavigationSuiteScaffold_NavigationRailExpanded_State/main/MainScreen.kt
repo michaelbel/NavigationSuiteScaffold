@@ -17,13 +17,14 @@ import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.material3.adaptive.navigationsuite.rememberNavigationSuiteScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.launch
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.Tabs
 import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded_State.main.about.AboutScreen
 import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded_State.main.home.HomeScreen
@@ -34,17 +35,20 @@ fun MainScreen(
     onNavigateToDetails: (Int) -> Unit
 ) {
     var selectedTab by rememberSaveable(stateSaver = Tabs.Saver) { mutableStateOf(Tabs.Home) }
-    val scaffoldState = rememberNavigationSuiteScaffoldState()
-    val scope = rememberCoroutineScope()
+    val navigationVisible by AppSettings.navigationVisibleFlow.collectAsStateWithLifecycle()
 
     val navigationSuiteType = when {
         currentWindowDpSize().width >= 1200.dp -> NavigationSuiteType.WideNavigationRailExpanded
         else -> NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
     }
     val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed || navigationSuiteType == NavigationSuiteType.WideNavigationRailExpanded
+    val navigationSuiteScaffoldState = rememberNavigationSuiteScaffoldState()
+
+    LaunchedEffect(navigationVisible) {
+        if (navigationVisible) navigationSuiteScaffoldState.show() else navigationSuiteScaffoldState.hide()
+    }
 
     NavigationSuiteScaffold(
-        state = scaffoldState,
         navigationItems = {
             NavigationSuiteItem(
                 selected = selectedTab == Tabs.Home,
@@ -97,7 +101,8 @@ fun MainScreen(
                 navigationSuiteType = navigationSuiteType
             )
         },
-        navigationSuiteType = navigationSuiteType
+        navigationSuiteType = navigationSuiteType,
+        state = navigationSuiteScaffoldState
     ) {
         when (selectedTab) {
             Tabs.Home -> {
@@ -108,13 +113,7 @@ fun MainScreen(
             }
             Tabs.Settings -> {
                 SettingsScreen(
-                    isNavigationRail = isNavigationRail,
-                    navigationVisible = scaffoldState.isVisible,
-                    onToggleNavigation = {
-                        scope.launch {
-                            if (scaffoldState.isVisible) scaffoldState.hide() else scaffoldState.show()
-                        }
-                    }
+                    isNavigationRail = isNavigationRail
                 )
             }
             Tabs.About -> {

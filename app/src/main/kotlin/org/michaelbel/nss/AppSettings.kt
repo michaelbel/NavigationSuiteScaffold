@@ -12,4 +12,11 @@ object AppSettings {
     fun toggleDynamicColors() {
         _dynamicColorsFlow.value = !dynamicColorsFlow.value
     }
+
+    private val _navigationVisibleFlow = MutableStateFlow(true)
+    val navigationVisibleFlow: StateFlow<Boolean> = _navigationVisibleFlow.asStateFlow()
+
+    fun toggleNavigationVisible() {
+        _navigationVisibleFlow.value = !_navigationVisibleFlow.value
+    }
 }
