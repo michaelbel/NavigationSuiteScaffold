@@ -3,7 +3,6 @@
 package org.michaelbel.nss.sample01_Scaffold_BottomBar.main.settings
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -67,8 +66,7 @@ fun SettingsScreen(
                 top = 16.dp,
                 end = 16.dp,
                 bottom = bottomPadding
-            ),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            )
         ) {
             item {
                 ListItem(
