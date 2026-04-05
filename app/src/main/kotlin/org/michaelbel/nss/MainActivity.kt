@@ -19,12 +19,13 @@ class MainActivity: ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                val index = 3
+                val index = 4
                 when (index) {
                     0 -> Sample01App()
                     1 -> Sample02App()
                     2 -> Sample03App()
                     3 -> Sample04App()
+
                     4 -> Sample6App()
                     5 -> NavigationSuiteScaffoldSample()
                 }

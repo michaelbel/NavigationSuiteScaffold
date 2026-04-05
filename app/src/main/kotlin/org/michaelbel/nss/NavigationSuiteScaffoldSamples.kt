@@ -38,8 +38,7 @@ import kotlinx.coroutines.launch
 fun NavigationSuiteScaffoldSample() {
     var selectedItem by remember { mutableIntStateOf(0) }
     val navItems = listOf("Songs", "Artists", "Playlists")
-    val navSuiteType =
-        NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
+    val navSuiteType = NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
     val state = rememberNavigationSuiteScaffoldState()
     val scope = rememberCoroutineScope()
 
