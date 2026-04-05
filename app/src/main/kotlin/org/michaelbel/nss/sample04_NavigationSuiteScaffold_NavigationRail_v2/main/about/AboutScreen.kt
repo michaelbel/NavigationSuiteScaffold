@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.about
+package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.about
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

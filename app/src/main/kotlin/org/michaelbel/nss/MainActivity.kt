@@ -8,7 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import org.michaelbel.nss.sample01_Scaffold_BottomBar.Sample01App
 import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.Sample02App
 import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.Sample03App
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.Sample04App
+import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.Sample04App
 import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.Sample5App
 import org.michaelbel.nss.sample6_NavigationSuiteScaffold_NavigationRailExpanded.Sample6App
 

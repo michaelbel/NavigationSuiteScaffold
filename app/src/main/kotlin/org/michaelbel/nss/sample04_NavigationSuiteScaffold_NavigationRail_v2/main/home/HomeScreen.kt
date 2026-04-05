@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.home
+package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

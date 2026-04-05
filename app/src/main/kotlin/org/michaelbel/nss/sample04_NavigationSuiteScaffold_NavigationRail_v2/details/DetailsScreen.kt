@@ -1,46 +1,49 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.settings
+package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.details
 
-import androidx.compose.foundation.clickable
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FormatPaint
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import org.michaelbel.nss.AppSettings
+import org.michaelbel.nss.AppRoute
+import org.michaelbel.nss.boarList
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
 @Composable
-fun SettingsScreen(
-    isNavigationRail: Boolean
+fun DetailsScreen(
+    route: AppRoute.Details
 ) {
-    val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle(false)
+    val boar = boarList.first { it.id == route.boarId }
+    val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
+    val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
 
     Scaffold(
         modifier = Modifier
@@ -50,8 +53,20 @@ fun SettingsScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Settings"
+                        text = boar.name,
+                        overflow = TextOverflow.Ellipsis,
+                        maxLines = 2
                     )
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = { backDispatcher?.onBackPressed() }
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
+                            contentDescription = null
+                        )
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
@@ -69,33 +84,25 @@ fun SettingsScreen(
                 start = 16.dp,
                 top = 16.dp,
                 end = 16.dp,
-                bottom = if (isNavigationRail) navBarBottom else 16.dp
-            )
+                bottom = navBarBottom
+            ),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
-                ListItem(
+                Image(
+                    painter = painterResource(boar.drawableRes),
+                    contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Dynamic Colors"
-                        )
-                    },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Icons.Outlined.FormatPaint,
-                            contentDescription = null
-                        )
-                    },
-                    trailingContent = {
-                        Switch(
-                            checked = dynamicColorsEnabled,
-                            onCheckedChange = null
-                        )
-                    }
+                        .aspectRatio(16F / 9F)
+                        .clip(middleLargeIncreasedListItemShape),
+                    contentScale = ContentScale.Crop
+                )
+            }
+            item {
+                Text(
+                    text = boar.description,
+                    style = MaterialTheme.typography.bodyLarge
                 )
             }
         }

@@ -1,4 +1,4 @@
-package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail
+package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -12,8 +12,8 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.details.DetailsScreen
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail.main.MainScreen
+import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.details.DetailsScreen
+import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.MainScreen
 
 @Composable
 fun Sample04App() {
