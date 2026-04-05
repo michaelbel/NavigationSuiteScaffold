@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package org.michaelbel.nss.sample1_Scaffold_BottomBar.main.settings
+package org.michaelbel.nss.sample01_Scaffold_BottomBar.main.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

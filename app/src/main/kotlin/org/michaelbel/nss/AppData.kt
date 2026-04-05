@@ -131,13 +131,13 @@ fun BoarCard(
                 .fillMaxWidth()
         ) {
             Image(
-                painter = painterResource(id = entity.drawableRes),
+                painter = painterResource(entity.drawableRes),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
                     .aspectRatio(16F / 9F)
-                    .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                    .clip(topLargeIncreasedListItemShape)
             )
 
             Text(

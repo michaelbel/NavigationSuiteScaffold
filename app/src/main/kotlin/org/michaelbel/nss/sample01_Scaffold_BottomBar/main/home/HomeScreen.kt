@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.nss.sample1_Scaffold_BottomBar.main.home
+package org.michaelbel.nss.sample01_Scaffold_BottomBar.main.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

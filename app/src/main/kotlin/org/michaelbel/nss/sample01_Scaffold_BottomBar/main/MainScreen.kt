@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.nss.sample1_Scaffold_BottomBar.main
+package org.michaelbel.nss.sample01_Scaffold_BottomBar.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,9 +21,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import org.michaelbel.nss.Tabs
-import org.michaelbel.nss.sample1_Scaffold_BottomBar.main.about.AboutScreen
-import org.michaelbel.nss.sample1_Scaffold_BottomBar.main.home.HomeScreen
-import org.michaelbel.nss.sample1_Scaffold_BottomBar.main.settings.SettingsScreen
+import org.michaelbel.nss.sample01_Scaffold_BottomBar.main.about.AboutScreen
+import org.michaelbel.nss.sample01_Scaffold_BottomBar.main.home.HomeScreen
+import org.michaelbel.nss.sample01_Scaffold_BottomBar.main.settings.SettingsScreen
 
 @Composable
 fun MainScreen(

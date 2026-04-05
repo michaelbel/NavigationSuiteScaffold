@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.nss.sample1_Scaffold_BottomBar.details
+package org.michaelbel.nss.sample01_Scaffold_BottomBar.details
 
 import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.compose.foundation.Image

@@ -3,6 +3,7 @@
 package org.michaelbel.nss
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialTheme
@@ -51,6 +52,14 @@ val topListItemShape: RoundedCornerShape
         topEnd = MaterialTheme.shapes.largeIncreased.topEnd,
         bottomStart = MaterialTheme.shapes.extraSmall.bottomStart,
         bottomEnd = MaterialTheme.shapes.extraSmall.bottomStart
+    )
+
+val topLargeIncreasedListItemShape: RoundedCornerShape
+    @Composable get() = RoundedCornerShape(
+        topStart = MaterialTheme.shapes.largeIncreased.topStart,
+        topEnd = MaterialTheme.shapes.largeIncreased.topEnd,
+        bottomStart = CornerSize(0.dp),
+        bottomEnd = CornerSize(0.dp)
     )
 
 val middleExtraSmallListItemShape: RoundedCornerShape

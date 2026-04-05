@@ -1,4 +1,4 @@
-package org.michaelbel.nss.sample1_Scaffold_BottomBar
+package org.michaelbel.nss.sample01_Scaffold_BottomBar
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -7,17 +7,16 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.sample1_Scaffold_BottomBar.details.DetailsScreen
-import org.michaelbel.nss.sample1_Scaffold_BottomBar.main.MainScreen
+import org.michaelbel.nss.sample01_Scaffold_BottomBar.details.DetailsScreen
+import org.michaelbel.nss.sample01_Scaffold_BottomBar.main.MainScreen
 
 @Composable
-fun Sample1App() {
+fun Sample01App() {
     val backStack = rememberNavBackStack(AppRoute.Home)
 
     NavDisplay(
@@ -25,10 +24,7 @@ fun Sample1App() {
         modifier = Modifier.fillMaxSize(),
         popTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
         predictivePopTransitionSpec = { fadeIn() togetherWith fadeOut() using SizeTransform(clip = false) },
-        entryDecorators = listOf(
-            rememberSaveableStateHolderNavEntryDecorator(),
-            rememberViewModelStoreNavEntryDecorator()
-        ),
+        entryDecorators = listOf(rememberSaveableStateHolderNavEntryDecorator()),
         entryProvider = entryProvider {
             entry<AppRoute.Home> {
                 MainScreen(
