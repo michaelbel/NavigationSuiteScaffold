@@ -1,4 +1,4 @@
-package org.michaelbel.nss.sample2_NavigationSuiteScaffold_BottomBar
+package org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -13,11 +13,11 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.sample2_NavigationSuiteScaffold_BottomBar.details.DetailsScreen
-import org.michaelbel.nss.sample2_NavigationSuiteScaffold_BottomBar.main.MainScreen
+import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.details.DetailsScreen
+import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.main.MainScreen
 
 @Composable
-fun Sample2App() {
+fun Sample02App() {
     val backStack = rememberNavBackStack(AppRoute.Home)
 
     NavDisplay(

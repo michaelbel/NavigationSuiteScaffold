@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import org.michaelbel.nss.sample01_Scaffold_BottomBar.Sample01App
-import org.michaelbel.nss.sample2_NavigationSuiteScaffold_BottomBar.Sample2App
+import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.Sample02App
 import org.michaelbel.nss.sample3_NavigationSuiteScaffold_BottomBar.Sample3App
 import org.michaelbel.nss.sample4_NavigationSuiteScaffold_NavigationRail.Sample4App
 import org.michaelbel.nss.sample5_NavigationSuiteScaffold_NavigationRail.Sample5App
@@ -24,7 +24,7 @@ class MainActivity: ComponentActivity() {
                 when (index) {
                     0 -> Sample01App()
 
-                    1 -> Sample2App()
+                    1 -> Sample02App()
                     2 -> Sample3App()
                     3 -> Sample4App()
                     4 -> Sample5App()
