@@ -1,4 +1,4 @@
-package org.michaelbel.nss.sample6_NavigationSuiteScaffold_NavigationRailExpanded
+package org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRailExpanded
 
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -12,11 +12,11 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import org.michaelbel.nss.AppRoute
-import org.michaelbel.nss.sample6_NavigationSuiteScaffold_NavigationRailExpanded.details.DetailsScreen
-import org.michaelbel.nss.sample6_NavigationSuiteScaffold_NavigationRailExpanded.main.MainScreen
+import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRailExpanded.details.DetailsScreen
+import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRailExpanded.main.MainScreen
 
 @Composable
-fun Sample6App() {
+fun Sample05App() {
     val backStack = rememberNavBackStack(AppRoute.Home)
 
     NavDisplay(
