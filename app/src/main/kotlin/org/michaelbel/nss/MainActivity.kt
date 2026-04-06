@@ -43,6 +43,7 @@ import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRail_Vertic
 import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded.Sample06App
 import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRailExpanded_State.Sample07App
 import org.michaelbel.nss.sample08_NavigationSuiteScaffold_NavigationSuite.Sample08App
+import org.michaelbel.nss.sample09_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.Sample09App
 
 class MainActivity: ComponentActivity() {
 
@@ -66,6 +67,7 @@ class MainActivity: ComponentActivity() {
                         5 -> Sample06App()
                         6 -> Sample07App()
                         7 -> Sample08App()
+                        8 -> Sample09App()
                     }
                 }
             }
@@ -192,11 +194,22 @@ private fun SamplesListScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(bottomListItemShape)
+                        .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(7) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 08") },
                     headlineContent = { Text(text = "NavigationSuite") }
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable { onSampleClick(8) },
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    overlineContent = { Text(text = "Sample 09") },
+                    headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
                 )
             }
         }
