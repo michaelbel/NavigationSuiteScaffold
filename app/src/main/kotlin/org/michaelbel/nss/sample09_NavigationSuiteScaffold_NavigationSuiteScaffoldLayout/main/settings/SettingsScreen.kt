@@ -45,11 +45,7 @@ fun SettingsScreen() {
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = "Settings"
-                    )
-                },
+                title = { Text(text = "Settings") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
                 ),
@@ -76,11 +72,7 @@ fun SettingsScreen() {
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable(onClick = AppSettings::toggleDynamicColors),
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Dynamic Colors"
-                        )
-                    },
+                    headlineContent = { Text(text = "Dynamic Colors") },
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Outlined.FormatPaint,

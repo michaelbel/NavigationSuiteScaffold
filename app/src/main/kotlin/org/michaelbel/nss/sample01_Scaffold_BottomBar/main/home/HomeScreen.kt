@@ -35,11 +35,7 @@ fun HomeScreen(
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = "Home"
-                    )
-                },
+                title = { Text(text = "Home") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
                 ),

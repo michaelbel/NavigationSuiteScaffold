@@ -11,9 +11,12 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -44,6 +47,7 @@ import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpande
 import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRailExpanded_State.Sample07App
 import org.michaelbel.nss.sample08_NavigationSuiteScaffold_NavigationSuite.Sample08App
 import org.michaelbel.nss.sample09_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.Sample09App
+import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.Sample10App
 
 class MainActivity: ComponentActivity() {
 
@@ -68,6 +72,7 @@ class MainActivity: ComponentActivity() {
                         6 -> Sample07App()
                         7 -> Sample08App()
                         8 -> Sample09App()
+                        9 -> Sample10App()
                     }
                 }
             }
@@ -85,13 +90,10 @@ private fun SamplesListScreen(
         modifier = Modifier
             .fillMaxSize()
             .nestedScroll(scrollBehavior.nestedScrollConnection),
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = "NavigationSuiteScaffold"
-                    )
-                },
+                title = { Text(text = "NavigationSuiteScaffold") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
                 ),
@@ -103,7 +105,12 @@ private fun SamplesListScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            contentPadding = PaddingValues(16.dp),
+            contentPadding = PaddingValues(
+                start = 16.dp,
+                top = 16.dp,
+                end = 16.dp,
+                bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
+            ),
             verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
@@ -205,11 +212,22 @@ private fun SamplesListScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(bottomListItemShape)
+                        .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(8) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 09") },
                     headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable { onSampleClick(9) },
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    overlineContent = { Text(text = "Sample 10") },
+                    headlineContent = { Text(text = "PrimaryActionContent") }
                 )
             }
         }

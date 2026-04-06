@@ -47,11 +47,7 @@ fun MainScreen(
                         contentDescription = null
                     )
                 },
-                label = {
-                    Text(
-                        text = "Home"
-                    )
-                }
+                label = { Text(text = "Home") }
             )
 
             NavigationSuiteItem(
@@ -63,11 +59,7 @@ fun MainScreen(
                         contentDescription = null
                     )
                 },
-                label = {
-                    Text(
-                        text = "Settings"
-                    )
-                }
+                label = { Text(text = "Settings") }
             )
 
             NavigationSuiteItem(
@@ -79,11 +71,7 @@ fun MainScreen(
                         contentDescription = null
                     )
                 },
-                label = {
-                    Text(
-                        text = "About"
-                    )
-                }
+                label = { Text(text = "About") }
             )
         }
 

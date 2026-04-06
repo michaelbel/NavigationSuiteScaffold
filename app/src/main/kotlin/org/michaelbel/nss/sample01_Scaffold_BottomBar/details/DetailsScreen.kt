@@ -43,7 +43,6 @@ fun DetailsScreen(
     val boar = boarList.first { it.id == route.boarId }
     val backDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val navBarBottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
 
     Scaffold(
         modifier = Modifier
@@ -84,7 +83,7 @@ fun DetailsScreen(
                 start = 16.dp,
                 top = 16.dp,
                 end = 16.dp,
-                bottom = navBarBottom
+                bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
             ),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {

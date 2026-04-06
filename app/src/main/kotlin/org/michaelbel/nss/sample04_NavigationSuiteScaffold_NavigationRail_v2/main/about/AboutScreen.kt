@@ -47,11 +47,7 @@ fun AboutScreen(
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                title = {
-                    Text(
-                        text = "About"
-                    )
-                },
+                title = { Text(text = "About") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainer
                 ),
@@ -79,11 +75,7 @@ fun AboutScreen(
                         .clip(topListItemShape)
                         .clickable { uriHandler.openUri("https://github.com/michaelbel") },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Star on GitHub"
-                        )
-                    },
+                    headlineContent = { Text(text = "Star on GitHub") },
                     leadingContent = {
                         Icon(
                             imageVector = Github,
@@ -99,11 +91,7 @@ fun AboutScreen(
                         .clip(bottomListItemShape)
                         .clickable { uriHandler.openUri("https://t.me/android_career") },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = {
-                        Text(
-                            text = "Telegram Channel"
-                        )
-                    },
+                    headlineContent = { Text(text = "Telegram Channel") },
                     leadingContent = {
                         Icon(
                             imageVector = Telegram,

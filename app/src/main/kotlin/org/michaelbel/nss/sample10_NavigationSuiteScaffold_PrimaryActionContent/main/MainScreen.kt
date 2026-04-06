@@ -1,12 +1,13 @@
 @file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
-package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main
+package org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
@@ -22,19 +23,22 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.Tabs
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.about.AboutScreen
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.home.HomeScreen
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.main.settings.SettingsScreen
+import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main.about.AboutScreen
+import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main.home.HomeScreen
+import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main.settings.SettingsScreen
 
 @Composable
 fun MainScreen(
     onNavigateToDetails: (Int) -> Unit
 ) {
     var selectedTab by rememberSaveable(stateSaver = Tabs.Saver) { mutableStateOf(Tabs.Home) }
+    val primaryActionAlignment by AppSettings.primaryActionAlignmentFlow.collectAsStateWithLifecycle()
 
     val navigationSuiteType = NavigationSuiteScaffoldDefaults.navigationSuiteType(currentWindowAdaptiveInfo())
+    val isNavigationBar = navigationSuiteType == NavigationSuiteType.ShortNavigationBarCompact
     val isNavigationRail = navigationSuiteType == NavigationSuiteType.WideNavigationRailCollapsed
 
     NavigationSuiteScaffold(
@@ -42,7 +46,16 @@ fun MainScreen(
             when {
                 isNavigationRail -> {
                     NavigationRail(
-                        modifier = Modifier.fillMaxWidth()
+                        header = {
+                            FloatingActionButton(
+                                onClick = {}
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.Add,
+                                    contentDescription = null
+                                )
+                            }
+                        }
                     ) {
                         NavigationRailItem(
                             selected = selectedTab == Tabs.Home,
@@ -88,7 +101,8 @@ fun MainScreen(
                                 contentDescription = null
                             )
                         },
-                        label = { Text(text = "Home") }
+                        label = { Text(text = "Home") },
+                        navigationSuiteType = navigationSuiteType
                     )
 
                     NavigationSuiteItem(
@@ -100,7 +114,8 @@ fun MainScreen(
                                 contentDescription = null
                             )
                         },
-                        label = { Text(text = "Settings") }
+                        label = { Text(text = "Settings") },
+                        navigationSuiteType = navigationSuiteType
                     )
 
                     NavigationSuiteItem(
@@ -112,12 +127,26 @@ fun MainScreen(
                                 contentDescription = null
                             )
                         },
-                        label = { Text(text = "About") }
+                        label = { Text(text = "About") },
+                        navigationSuiteType = navigationSuiteType
                     )
                 }
             }
         },
-        navigationSuiteType = navigationSuiteType
+        navigationSuiteType = navigationSuiteType,
+        primaryActionContent = {
+            if (isNavigationBar) {
+                FloatingActionButton(
+                    onClick = {}
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Add,
+                        contentDescription = null
+                    )
+                }
+            }
+        },
+        primaryActionContentHorizontalAlignment = primaryActionAlignment
     ) {
         when (selectedTab) {
             Tabs.Home -> {
@@ -128,7 +157,8 @@ fun MainScreen(
             }
             Tabs.Settings -> {
                 SettingsScreen(
-                    isNavigationRail = isNavigationRail
+                    isNavigationRail = isNavigationRail,
+                    isNavigationBar = isNavigationBar
                 )
             }
             Tabs.About -> {

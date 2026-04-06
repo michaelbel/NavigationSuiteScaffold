@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
-package org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRail_VerticalArrangement.main.settings
+package org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,10 +15,10 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.FormatAlignLeft
+import androidx.compose.material.icons.automirrored.outlined.FormatAlignRight
+import androidx.compose.material.icons.outlined.FormatAlignCenter
 import androidx.compose.material.icons.outlined.FormatPaint
-import androidx.compose.material.icons.outlined.VerticalAlignBottom
-import androidx.compose.material.icons.outlined.VerticalAlignCenter
-import androidx.compose.material.icons.outlined.VerticalAlignTop
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -33,6 +33,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -46,10 +47,11 @@ import org.michaelbel.nss.topListItemShape
 
 @Composable
 fun SettingsScreen(
-    isNavigationRail: Boolean
+    isNavigationRail: Boolean,
+    isNavigationBar: Boolean
 ) {
     val dynamicColorsEnabled by AppSettings.dynamicColorsFlow.collectAsStateWithLifecycle()
-    val navigationArrangement by AppSettings.navigationArrangementFlow.collectAsStateWithLifecycle()
+    val primaryActionAlignment by AppSettings.primaryActionAlignmentFlow.collectAsStateWithLifecycle()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
     val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
 
@@ -102,76 +104,78 @@ fun SettingsScreen(
                     }
                 )
             }
-            item {
-                Spacer(
-                    modifier = Modifier.height(14.dp)
-                )
-            }
-            item {
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(topListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Top) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = { Text(text = "Arrangement.Top") },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Icons.Outlined.VerticalAlignTop,
-                            contentDescription = null
-                        )
-                    },
-                    trailingContent = {
-                        RadioButton(
-                            selected = navigationArrangement == Arrangement.Top,
-                            onClick = null
-                        )
-                    }
-                )
-            }
-            item {
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Center) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = { Text(text = "Arrangement.Center") },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Icons.Outlined.VerticalAlignCenter,
-                            contentDescription = null
-                        )
-                    },
-                    trailingContent = {
-                        RadioButton(
-                            selected = navigationArrangement == Arrangement.Center,
-                            onClick = null
-                        )
-                    }
-                )
-            }
-            item {
-                ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Bottom) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
-                    headlineContent = { Text(text = "Arrangement.Bottom") },
-                    leadingContent = {
-                        Icon(
-                            imageVector = Icons.Outlined.VerticalAlignBottom,
-                            contentDescription = null
-                        )
-                    },
-                    trailingContent = {
-                        RadioButton(
-                            selected = navigationArrangement == Arrangement.Bottom,
-                            onClick = null
-                        )
-                    }
-                )
+            if (isNavigationBar) {
+                item {
+                    Spacer(
+                        modifier = Modifier.height(14.dp)
+                    )
+                }
+                item {
+                    ListItem(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(topListItemShape)
+                            .clickable { AppSettings.setPrimaryActionAlignment(Alignment.Start) },
+                        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                        headlineContent = { Text(text = "Alignment.Start") },
+                        leadingContent = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.FormatAlignLeft,
+                                contentDescription = null
+                            )
+                        },
+                        trailingContent = {
+                            RadioButton(
+                                selected = primaryActionAlignment == Alignment.Start,
+                                onClick = null
+                            )
+                        }
+                    )
+                }
+                item {
+                    ListItem(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(middleExtraSmallListItemShape)
+                            .clickable { AppSettings.setPrimaryActionAlignment(Alignment.CenterHorizontally) },
+                        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                        headlineContent = { Text(text = "Alignment.Center") },
+                        leadingContent = {
+                            Icon(
+                                imageVector = Icons.Outlined.FormatAlignCenter,
+                                contentDescription = null
+                            )
+                        },
+                        trailingContent = {
+                            RadioButton(
+                                selected = primaryActionAlignment == Alignment.CenterHorizontally,
+                                onClick = null
+                            )
+                        }
+                    )
+                }
+                item {
+                    ListItem(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(bottomListItemShape)
+                            .clickable { AppSettings.setPrimaryActionAlignment(Alignment.End) },
+                        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                        headlineContent = { Text(text = "Alignment.End") },
+                        leadingContent = {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.FormatAlignRight,
+                                contentDescription = null
+                            )
+                        },
+                        trailingContent = {
+                            RadioButton(
+                                selected = primaryActionAlignment == Alignment.End,
+                                onClick = null
+                            )
+                        }
+                    )
+                }
             }
         }
     }

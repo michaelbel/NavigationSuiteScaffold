@@ -1,6 +1,7 @@
 package org.michaelbel.nss
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.Alignment
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -26,5 +27,12 @@ object AppSettings {
 
     fun setNavigationArrangement(arrangement: Arrangement.Vertical) {
         _navigationArrangementFlow.value = arrangement
+    }
+
+    private val _primaryActionAlignmentFlow = MutableStateFlow(Alignment.End)
+    val primaryActionAlignmentFlow: StateFlow<Alignment.Horizontal> = _primaryActionAlignmentFlow.asStateFlow()
+
+    fun setPrimaryActionAlignment(alignment: Alignment.Horizontal) {
+        _primaryActionAlignmentFlow.value = alignment
     }
 }

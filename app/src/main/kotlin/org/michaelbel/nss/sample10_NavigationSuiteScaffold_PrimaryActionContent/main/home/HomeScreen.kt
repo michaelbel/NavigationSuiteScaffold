@@ -1,11 +1,13 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.main.home
+package org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.main.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -24,9 +26,11 @@ import org.michaelbel.nss.boarList
 
 @Composable
 fun HomeScreen(
+    isNavigationRail: Boolean,
     onNavigateToDetails: (Int) -> Unit
 ) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val navBarBottom = if (isNavigationRail) WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding() else 0.dp
 
     Scaffold(
         modifier = Modifier
@@ -47,7 +51,12 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            contentPadding = PaddingValues(16.dp),
+            contentPadding = PaddingValues(
+                start = 16.dp,
+                top = 16.dp,
+                end = 16.dp,
+                bottom = if (isNavigationRail) navBarBottom else 16.dp
+            ),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(

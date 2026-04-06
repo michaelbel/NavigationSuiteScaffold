@@ -45,11 +45,7 @@ fun MainScreen(
                             contentDescription = null
                         )
                     },
-                    label = {
-                        Text(
-                            text = "Home"
-                        )
-                    }
+                    label = { Text(text = "Home") }
                 )
 
                 NavigationBarItem(
@@ -61,11 +57,7 @@ fun MainScreen(
                             contentDescription = null
                         )
                     },
-                    label = {
-                        Text(
-                            text = "Settings"
-                        )
-                    }
+                    label = { Text(text = "Settings") }
                 )
 
                 NavigationBarItem(
@@ -77,11 +69,7 @@ fun MainScreen(
                             contentDescription = null
                         )
                     },
-                    label = {
-                        Text(
-                            text = "About"
-                        )
-                    }
+                    label = { Text(text = "About") }
                 )
             }
         },
