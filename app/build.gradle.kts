@@ -1,11 +1,9 @@
-
 import java.nio.charset.StandardCharsets
 
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.parcelize)
 }
 
 private val gitCommitsCount: Int by lazy {
@@ -57,7 +55,6 @@ android {
     }
 
     buildFeatures {
-        buildConfig = true
         compose = true
     }
 }
@@ -85,15 +82,9 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
-    implementation(libs.androidx.paging.compose)
     implementation(libs.androidx.window)
-    implementation(libs.koin.android)
-    implementation(libs.koin.androidx.compose)
     implementation(libs.androidx.compose.material3.windowsize)
 }
 
