@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -112,15 +111,16 @@ val boarList: List<Boar> = listOf(
         description = "Пустынный бородавочник — редкий вид диких свиней, обитающий в засушливых районах Восточной Африки. Он отличается крупной головой, мощными изогнутыми клыками и характерными кожными наростами на морде. Его тело покрыто редкой жёсткой щетиной, а длинные ноги помогают быстро передвигаться по открытой местности. Питается травой, корнями и клубнями, хорошо приспособлен к жизни в условиях жары и нехватки воды.",
         drawableRes = R.drawable.boar14
     )
-)
+).shuffled()
 
 @Composable
 fun BoarCard(
     entity: Boar,
-    onClick: (Int) -> Unit
+    onClick: (Int) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight(),
         shape = middleLargeIncreasedListItemShape
@@ -157,7 +157,8 @@ private fun BoarCardPreview() {
     AppTheme {
         BoarCard(
             entity = boarList.first(),
-            onClick = {}
+            onClick = {},
+            modifier = Modifier.padding(16.dp)
         )
     }
 }

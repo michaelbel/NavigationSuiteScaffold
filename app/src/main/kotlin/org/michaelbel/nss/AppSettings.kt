@@ -35,4 +35,11 @@ object AppSettings {
     fun setPrimaryActionAlignment(alignment: Alignment.Horizontal) {
         _primaryActionAlignmentFlow.value = alignment
     }
+
+    private val _customNavigationColorsFlow = MutableStateFlow(false)
+    val customNavigationColorsFlow: StateFlow<Boolean> = _customNavigationColorsFlow.asStateFlow()
+
+    fun toggleCustomNavigationColors() {
+        _customNavigationColorsFlow.value = !_customNavigationColorsFlow.value
+    }
 }

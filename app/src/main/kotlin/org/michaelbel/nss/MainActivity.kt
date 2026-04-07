@@ -51,6 +51,7 @@ import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRailExpande
 import org.michaelbel.nss.sample08_NavigationSuiteScaffold_NavigationSuite.Sample08App
 import org.michaelbel.nss.sample09_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.Sample09App
 import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.Sample10App
+import org.michaelbel.nss.sample11_NavigationSuiteScaffold_Colors.Sample11App
 
 class MainActivity: ComponentActivity() {
 
@@ -61,21 +62,24 @@ class MainActivity: ComponentActivity() {
         setContent {
             AppTheme {
                 var selectedSample by rememberSaveable { mutableStateOf<Int?>(null) }
-                if (selectedSample == null) {
-                    SamplesListScreen { selectedSample = it }
-                } else {
-                    BackHandler { selectedSample = null }
-                    when (selectedSample) {
-                        0 -> Sample01App()
-                        1 -> Sample02App()
-                        2 -> Sample03App()
-                        3 -> Sample04App()
-                        4 -> Sample05App()
-                        5 -> Sample06App()
-                        6 -> Sample07App()
-                        7 -> Sample08App()
-                        8 -> Sample09App()
-                        9 -> Sample10App()
+                when {
+                    selectedSample == null -> SamplesListScreen { selectedSample = it }
+                    else -> {
+                        BackHandler { selectedSample = null }
+
+                        when (selectedSample) {
+                            0 -> Sample01App()
+                            1 -> Sample02App()
+                            2 -> Sample03App()
+                            3 -> Sample04App()
+                            4 -> Sample05App()
+                            5 -> Sample06App()
+                            6 -> Sample07App()
+                            7 -> Sample08App()
+                            8 -> Sample09App()
+                            9 -> Sample10App()
+                            10 -> Sample11App()
+                        }
                     }
                 }
             }
@@ -226,11 +230,22 @@ private fun SamplesListScreen(
                 ListItem(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clip(bottomListItemShape)
+                        .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(9) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 10") },
                     headlineContent = { Text(text = "PrimaryActionContent") }
+                )
+            }
+            item {
+                ListItem(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(bottomListItemShape)
+                        .clickable { onSampleClick(10) },
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    overlineContent = { Text(text = "Sample 11") },
+                    headlineContent = { Text(text = "NavigationSuiteColors") }
                 )
             }
         }
