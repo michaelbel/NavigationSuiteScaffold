@@ -54,12 +54,12 @@ fun MainScreen(
                 shortNavigationBarContainerColor = MaterialTheme.colorScheme.primaryContainer,
                 shortNavigationBarContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 wideNavigationRailColors = WideNavigationRailDefaults.colors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
                 ),
                 navigationBarContainerColor = MaterialTheme.colorScheme.primaryContainer,
                 navigationBarContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 navigationRailContainerColor = MaterialTheme.colorScheme.primaryContainer,
-                navigationRailContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                navigationRailContentColor = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
         else -> NavigationSuiteDefaults.colors()
@@ -73,7 +73,7 @@ fun MainScreen(
                 selectedIconColor = MaterialTheme.colorScheme.onPrimary,
                 selectedTextColor = MaterialTheme.colorScheme.primary,
                 unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
         else -> null
