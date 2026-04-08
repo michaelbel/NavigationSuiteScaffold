@@ -42,16 +42,16 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import org.michaelbel.nss.sample01_Scaffold_BottomBar.Sample01App
-import org.michaelbel.nss.sample02_NavigationSuiteScaffold_BottomBar.Sample02App
+import org.michaelbel.nss.sample02_NavigationSuiteScaffold_NavigationBar.Sample02App
 import org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.Sample03App
-import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_v2.Sample04App
-import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRail_VerticalArrangement.Sample05App
-import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRailExpanded.Sample06App
-import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRailExpanded_State.Sample07App
-import org.michaelbel.nss.sample08_NavigationSuiteScaffold_NavigationSuite.Sample08App
-import org.michaelbel.nss.sample09_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.Sample09App
-import org.michaelbel.nss.sample10_NavigationSuiteScaffold_PrimaryActionContent.Sample10App
-import org.michaelbel.nss.sample11_NavigationSuiteScaffold_Colors.Sample11App
+import org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_NoLabels.Sample04App
+import org.michaelbel.nss.sample05_NavigationSuiteScaffold_NavigationRail_Expanded.Sample05App
+import org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRail_VerticalArrangement.Sample06App
+import org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRail_Expanded_State.Sample07App
+import org.michaelbel.nss.sample08_NavigationSuiteScaffold_PrimaryActionContent.Sample08App
+import org.michaelbel.nss.sample09_NavigationSuiteScaffold_Colors.Sample09App
+import org.michaelbel.nss.sample10_NavigationSuiteScaffold_NavigationSuite.Sample10App
+import org.michaelbel.nss.sample11_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.Sample11App
 
 class MainActivity: ComponentActivity() {
 
@@ -168,7 +168,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(3) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 04") },
-                    headlineContent = { Text(text = "NavigationRail without Labels") }
+                    headlineContent = { Text(text = "NavigationRail NoLabels") }
                 )
             }
             item {
@@ -179,7 +179,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(4) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 05") },
-                    headlineContent = { Text(text = "NavigationRail VerticalArrangement") }
+                    headlineContent = { Text(text = "NavigationRail Expanded") }
                 )
             }
             item {
@@ -190,7 +190,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(5) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 06") },
-                    headlineContent = { Text(text = "NavigationRailExpanded") }
+                    headlineContent = { Text(text = "NavigationRail VerticalArrangement") }
                 )
             }
             item {
@@ -201,7 +201,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(6) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 07") },
-                    headlineContent = { Text(text = "NavigationRailExpanded State") }
+                    headlineContent = { Text(text = "NavigationRail Expanded State") }
                 )
             }
             item {
@@ -212,7 +212,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(7) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 08") },
-                    headlineContent = { Text(text = "NavigationSuite") }
+                    headlineContent = { Text(text = "PrimaryActionContent") }
                 )
             }
             item {
@@ -223,7 +223,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(8) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 09") },
-                    headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
+                    headlineContent = { Text(text = "Colors") }
                 )
             }
             item {
@@ -234,7 +234,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(9) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 10") },
-                    headlineContent = { Text(text = "PrimaryActionContent") }
+                    headlineContent = { Text(text = "NavigationSuite") }
                 )
             }
             item {
@@ -245,7 +245,7 @@ private fun SamplesListScreen(
                         .clickable { onSampleClick(10) },
                     colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
                     overlineContent = { Text(text = "Sample 11") },
-                    headlineContent = { Text(text = "NavigationSuiteColors") }
+                    headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
                 )
             }
         }
