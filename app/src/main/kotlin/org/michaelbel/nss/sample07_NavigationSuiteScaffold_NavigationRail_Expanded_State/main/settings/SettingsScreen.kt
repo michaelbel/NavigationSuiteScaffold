@@ -16,9 +16,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FormatPaint
-import androidx.compose.material.icons.outlined.Splitscreen
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -38,6 +35,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.FormatPaint
+import org.michaelbel.nss.Splitscreen
 import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
@@ -89,7 +88,7 @@ fun SettingsScreen(
                     headlineContent = { Text(text = "Dynamic Colors") },
                     leadingContent = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatPaint,
+                            imageVector = FormatPaint,
                             contentDescription = null
                         )
                     },
@@ -118,7 +117,7 @@ fun SettingsScreen(
                     headlineContent = { Text(text = "Navigation Visibility") },
                     leadingContent = {
                         Icon(
-                            imageVector = Icons.Outlined.Splitscreen,
+                            imageVector = Splitscreen,
                             contentDescription = null
                         )
                     },

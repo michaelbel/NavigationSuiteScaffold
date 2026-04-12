@@ -5,6 +5,8 @@ package org.michaelbel.nss
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.materialIcon
+import androidx.compose.material.icons.materialPath
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -275,4 +277,408 @@ val Telegram: ImageVector
         }.build()
 
         return _telegram!!
+    }
+
+private var _formatPaint: ImageVector? = null
+val FormatPaint: ImageVector
+    get() {
+        if (_formatPaint != null) {
+            return _formatPaint!!
+        }
+        _formatPaint = materialIcon(name = "Outlined.FormatPaint") {
+            materialPath {
+                moveTo(18.0f, 4.0f)
+                lineTo(18.0f, 3.0f)
+                curveToRelative(0.0f, -0.55f, -0.45f, -1.0f, -1.0f, -1.0f)
+                lineTo(5.0f, 2.0f)
+                curveToRelative(-0.55f, 0.0f, -1.0f, 0.45f, -1.0f, 1.0f)
+                verticalLineToRelative(4.0f)
+                curveToRelative(0.0f, 0.55f, 0.45f, 1.0f, 1.0f, 1.0f)
+                horizontalLineToRelative(12.0f)
+                curveToRelative(0.55f, 0.0f, 1.0f, -0.45f, 1.0f, -1.0f)
+                lineTo(18.0f, 6.0f)
+                horizontalLineToRelative(1.0f)
+                verticalLineToRelative(4.0f)
+                lineTo(9.0f, 10.0f)
+                verticalLineToRelative(11.0f)
+                curveToRelative(0.0f, 0.55f, 0.45f, 1.0f, 1.0f, 1.0f)
+                horizontalLineToRelative(2.0f)
+                curveToRelative(0.55f, 0.0f, 1.0f, -0.45f, 1.0f, -1.0f)
+                verticalLineToRelative(-9.0f)
+                horizontalLineToRelative(8.0f)
+                lineTo(21.0f, 4.0f)
+                horizontalLineToRelative(-3.0f)
+                close()
+                moveTo(16.0f, 6.0f)
+                lineTo(6.0f, 6.0f)
+                lineTo(6.0f, 4.0f)
+                horizontalLineToRelative(10.0f)
+                verticalLineToRelative(2.0f)
+                close()
+            }
+        }
+        return _formatPaint!!
+    }
+
+private var _formatAlignCenter: ImageVector? = null
+val FormatAlignCenter: ImageVector
+    get() {
+        if (_formatAlignCenter != null) {
+            return _formatAlignCenter!!
+        }
+        _formatAlignCenter = materialIcon(name = "Outlined.FormatAlignCenter") {
+            materialPath {
+                moveTo(7.0f, 15.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(10.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(7.0f, 15.0f)
+                close()
+                moveTo(3.0f, 21.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 19.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 13.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 11.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(7.0f, 7.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(10.0f)
+                lineTo(17.0f, 7.0f)
+                lineTo(7.0f, 7.0f)
+                close()
+                moveTo(3.0f, 3.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(18.0f)
+                lineTo(21.0f, 3.0f)
+                lineTo(3.0f, 3.0f)
+                close()
+            }
+        }
+        return _formatAlignCenter!!
+    }
+
+private var _splitscreen: ImageVector? = null
+val Splitscreen: ImageVector
+    get() {
+        if (_splitscreen != null) {
+            return _splitscreen!!
+        }
+        _splitscreen = materialIcon(name = "Outlined.Splitscreen") {
+            materialPath {
+                moveTo(18.0f, 4.0f)
+                verticalLineToRelative(5.0f)
+                horizontalLineTo(6.0f)
+                verticalLineTo(4.0f)
+                horizontalLineTo(18.0f)
+                moveTo(18.0f, 2.0f)
+                horizontalLineTo(6.0f)
+                curveTo(4.9f, 2.0f, 4.0f, 2.9f, 4.0f, 4.0f)
+                verticalLineToRelative(5.0f)
+                curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f)
+                horizontalLineToRelative(12.0f)
+                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)
+                verticalLineTo(4.0f)
+                curveTo(20.0f, 2.9f, 19.1f, 2.0f, 18.0f, 2.0f)
+                close()
+                moveTo(18.0f, 15.0f)
+                verticalLineToRelative(5.0f)
+                horizontalLineTo(6.0f)
+                verticalLineToRelative(-5.0f)
+                horizontalLineTo(18.0f)
+                moveTo(18.0f, 13.0f)
+                horizontalLineTo(6.0f)
+                curveToRelative(-1.1f, 0.0f, -2.0f, 0.9f, -2.0f, 2.0f)
+                verticalLineToRelative(5.0f)
+                curveToRelative(0.0f, 1.1f, 0.9f, 2.0f, 2.0f, 2.0f)
+                horizontalLineToRelative(12.0f)
+                curveToRelative(1.1f, 0.0f, 2.0f, -0.9f, 2.0f, -2.0f)
+                verticalLineToRelative(-5.0f)
+                curveTo(20.0f, 13.9f, 19.1f, 13.0f, 18.0f, 13.0f)
+                close()
+            }
+        }
+        return _splitscreen!!
+    }
+
+private var _verticalAlignTop: ImageVector? = null
+val VerticalAlignTop: ImageVector
+    get() {
+        if (_verticalAlignTop != null) {
+            return _verticalAlignTop!!
+        }
+        _verticalAlignTop = materialIcon(name = "Outlined.VerticalAlignTop") {
+            materialPath {
+                moveTo(8.0f, 11.0f)
+                horizontalLineToRelative(3.0f)
+                verticalLineToRelative(10.0f)
+                horizontalLineToRelative(2.0f)
+                verticalLineTo(11.0f)
+                horizontalLineToRelative(3.0f)
+                lineToRelative(-4.0f, -4.0f)
+                lineToRelative(-4.0f, 4.0f)
+                close()
+                moveTo(4.0f, 3.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(16.0f)
+                verticalLineTo(3.0f)
+                horizontalLineTo(4.0f)
+                close()
+            }
+        }
+        return _verticalAlignTop!!
+    }
+
+private var _verticalAlignCenter: ImageVector? = null
+val VerticalAlignCenter: ImageVector
+    get() {
+        if (_verticalAlignCenter != null) {
+            return _verticalAlignCenter!!
+        }
+        _verticalAlignCenter = materialIcon(name = "Outlined.VerticalAlignCenter") {
+            materialPath {
+                moveTo(8.0f, 19.0f)
+                horizontalLineToRelative(3.0f)
+                verticalLineToRelative(4.0f)
+                horizontalLineToRelative(2.0f)
+                verticalLineToRelative(-4.0f)
+                horizontalLineToRelative(3.0f)
+                lineToRelative(-4.0f, -4.0f)
+                lineToRelative(-4.0f, 4.0f)
+                close()
+                moveTo(16.0f, 5.0f)
+                horizontalLineToRelative(-3.0f)
+                lineTo(13.0f, 1.0f)
+                horizontalLineToRelative(-2.0f)
+                verticalLineToRelative(4.0f)
+                lineTo(8.0f, 5.0f)
+                lineToRelative(4.0f, 4.0f)
+                lineToRelative(4.0f, -4.0f)
+                close()
+                moveTo(4.0f, 11.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(16.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(4.0f, 11.0f)
+                close()
+            }
+        }
+        return _verticalAlignCenter!!
+    }
+
+private var _verticalAlignBottom: ImageVector? = null
+val VerticalAlignBottom: ImageVector
+    get() {
+        if (_verticalAlignBottom != null) {
+            return _verticalAlignBottom!!
+        }
+        _verticalAlignBottom = materialIcon(name = "Outlined.VerticalAlignBottom") {
+            materialPath {
+                moveTo(16.0f, 13.0f)
+                horizontalLineToRelative(-3.0f)
+                verticalLineTo(3.0f)
+                horizontalLineToRelative(-2.0f)
+                verticalLineToRelative(10.0f)
+                horizontalLineTo(8.0f)
+                lineToRelative(4.0f, 4.0f)
+                lineToRelative(4.0f, -4.0f)
+                close()
+                moveTo(4.0f, 19.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(16.0f)
+                verticalLineToRelative(-2.0f)
+                horizontalLineTo(4.0f)
+                close()
+            }
+        }
+        return _verticalAlignBottom!!
+    }
+
+private var _palette: ImageVector? = null
+val Palette: ImageVector
+    get() {
+        if (_palette != null) {
+            return _palette!!
+        }
+        _palette = materialIcon(name = "Outlined.Palette") {
+            materialPath {
+                moveTo(12.0f, 22.0f)
+                curveTo(6.49f, 22.0f, 2.0f, 17.51f, 2.0f, 12.0f)
+                reflectiveCurveTo(6.49f, 2.0f, 12.0f, 2.0f)
+                reflectiveCurveToRelative(10.0f, 4.04f, 10.0f, 9.0f)
+                curveToRelative(0.0f, 3.31f, -2.69f, 6.0f, -6.0f, 6.0f)
+                horizontalLineToRelative(-1.77f)
+                curveToRelative(-0.28f, 0.0f, -0.5f, 0.22f, -0.5f, 0.5f)
+                curveToRelative(0.0f, 0.12f, 0.05f, 0.23f, 0.13f, 0.33f)
+                curveToRelative(0.41f, 0.47f, 0.64f, 1.06f, 0.64f, 1.67f)
+                curveTo(14.5f, 20.88f, 13.38f, 22.0f, 12.0f, 22.0f)
+                close()
+                moveTo(12.0f, 4.0f)
+                curveToRelative(-4.41f, 0.0f, -8.0f, 3.59f, -8.0f, 8.0f)
+                reflectiveCurveToRelative(3.59f, 8.0f, 8.0f, 8.0f)
+                curveToRelative(0.28f, 0.0f, 0.5f, -0.22f, 0.5f, -0.5f)
+                curveToRelative(0.0f, -0.16f, -0.08f, -0.28f, -0.14f, -0.35f)
+                curveToRelative(-0.41f, -0.46f, -0.63f, -1.05f, -0.63f, -1.65f)
+                curveToRelative(0.0f, -1.38f, 1.12f, -2.5f, 2.5f, -2.5f)
+                horizontalLineTo(16.0f)
+                curveToRelative(2.21f, 0.0f, 4.0f, -1.79f, 4.0f, -4.0f)
+                curveTo(20.0f, 7.14f, 16.41f, 4.0f, 12.0f, 4.0f)
+                close()
+            }
+            materialPath {
+                moveTo(6.5f, 11.5f)
+                moveToRelative(-1.5f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, 3.0f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, -3.0f, 0.0f)
+            }
+            materialPath {
+                moveTo(9.5f, 7.5f)
+                moveToRelative(-1.5f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, 3.0f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, -3.0f, 0.0f)
+            }
+            materialPath {
+                moveTo(14.5f, 7.5f)
+                moveToRelative(-1.5f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, 3.0f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, -3.0f, 0.0f)
+            }
+            materialPath {
+                moveTo(17.5f, 11.5f)
+                moveToRelative(-1.5f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, 3.0f, 0.0f)
+                arcToRelative(1.5f, 1.5f, 0.0f, true, true, -3.0f, 0.0f)
+            }
+        }
+        return _palette!!
+    }
+
+private var _menuOpen: ImageVector? = null
+val MenuOpen: ImageVector
+    get() {
+        if (_menuOpen != null) {
+            return _menuOpen!!
+        }
+        _menuOpen = materialIcon(name = "AutoMirrored.Filled.MenuOpen", autoMirror = true) {
+            materialPath {
+                moveTo(3.0f, 18.0f)
+                horizontalLineToRelative(13.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 16.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 13.0f)
+                horizontalLineToRelative(10.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 11.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 6.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(13.0f)
+                lineTo(16.0f, 6.0f)
+                lineTo(3.0f, 6.0f)
+                close()
+                moveTo(21.0f, 15.59f)
+                lineTo(17.42f, 12.0f)
+                lineTo(21.0f, 8.41f)
+                lineTo(19.59f, 7.0f)
+                lineToRelative(-5.0f, 5.0f)
+                lineToRelative(5.0f, 5.0f)
+                lineTo(21.0f, 15.59f)
+                close()
+            }
+        }
+        return _menuOpen!!
+    }
+
+private var _formatAlignLeft: ImageVector? = null
+val FormatAlignLeft: ImageVector
+    get() {
+        if (_formatAlignLeft != null) {
+            return _formatAlignLeft!!
+        }
+        _formatAlignLeft = materialIcon(name = "AutoMirrored.Outlined.FormatAlignLeft", autoMirror = true) {
+            materialPath {
+                moveTo(15.0f, 15.0f)
+                lineTo(3.0f, 15.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(12.0f)
+                verticalLineToRelative(-2.0f)
+                close()
+                moveTo(15.0f, 7.0f)
+                lineTo(3.0f, 7.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(12.0f)
+                lineTo(15.0f, 7.0f)
+                close()
+                moveTo(3.0f, 13.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 11.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 21.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 19.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 3.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(18.0f)
+                lineTo(21.0f, 3.0f)
+                lineTo(3.0f, 3.0f)
+                close()
+            }
+        }
+        return _formatAlignLeft!!
+    }
+
+private var _formatAlignRight: ImageVector? = null
+val FormatAlignRight: ImageVector
+    get() {
+        if (_formatAlignRight != null) {
+            return _formatAlignRight!!
+        }
+        _formatAlignRight = materialIcon(name = "AutoMirrored.Outlined.FormatAlignRight", autoMirror = true) {
+            materialPath {
+                moveTo(3.0f, 21.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 19.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(9.0f, 17.0f)
+                horizontalLineToRelative(12.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(9.0f, 15.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 13.0f)
+                horizontalLineToRelative(18.0f)
+                verticalLineToRelative(-2.0f)
+                lineTo(3.0f, 11.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(9.0f, 9.0f)
+                horizontalLineToRelative(12.0f)
+                lineTo(21.0f, 7.0f)
+                lineTo(9.0f, 7.0f)
+                verticalLineToRelative(2.0f)
+                close()
+                moveTo(3.0f, 3.0f)
+                verticalLineToRelative(2.0f)
+                horizontalLineToRelative(18.0f)
+                lineTo(21.0f, 3.0f)
+                lineTo(3.0f, 3.0f)
+                close()
+            }
+        }
+        return _formatAlignRight!!
     }

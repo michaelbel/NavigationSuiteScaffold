@@ -16,9 +16,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FormatPaint
-import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -39,6 +36,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.FormatPaint
+import org.michaelbel.nss.Palette
 import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.middleLargeIncreasedListItemShape
 
@@ -93,7 +92,7 @@ fun SettingsScreen(
                     headlineContent = { Text(text = "Dynamic Colors") },
                     leadingContent = {
                         Icon(
-                            imageVector = Icons.Outlined.FormatPaint,
+                            imageVector = FormatPaint,
                             contentDescription = null
                         )
                     },
@@ -120,7 +119,7 @@ fun SettingsScreen(
                     headlineContent = { Text(text = "Custom NavigationSuiteColors") },
                     leadingContent = {
                         Icon(
-                            imageVector = Icons.Outlined.Palette,
+                            imageVector = Palette,
                             contentDescription = null
                         )
                     },
