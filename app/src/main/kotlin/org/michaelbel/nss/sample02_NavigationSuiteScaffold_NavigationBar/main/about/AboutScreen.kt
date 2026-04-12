@@ -66,7 +66,9 @@ fun AboutScreen() {
                         .fillMaxWidth()
                         .clip(topListItemShape)
                         .clickable { uriHandler.openUri("https://github.com/michaelbel") },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Star on GitHub") },
                     leadingContent = {
                         Icon(
@@ -82,7 +84,9 @@ fun AboutScreen() {
                         .fillMaxWidth()
                         .clip(bottomListItemShape)
                         .clickable { uriHandler.openUri("https://t.me/android_career") },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Telegram Channel") },
                     leadingContent = {
                         Icon(

@@ -126,7 +126,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable { onSampleClick(0) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 01") },
                     headlineContent = { Text(text = "Classic Scaffold BottomBar") }
                 )
@@ -144,7 +146,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(topListItemShape)
                         .clickable { onSampleClick(1) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 02") },
                     headlineContent = { Text(text = "NavigationSuiteScaffold NavigationBar") }
                 )
@@ -155,7 +159,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(2) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 03") },
                     headlineContent = { Text(text = "NavigationSuiteScaffold NavigationRail") }
                 )
@@ -166,7 +172,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(3) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 04") },
                     headlineContent = { Text(text = "NavigationRail NoLabels") }
                 )
@@ -177,7 +185,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(4) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 05") },
                     headlineContent = { Text(text = "NavigationRail Expanded") }
                 )
@@ -188,7 +198,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(5) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 06") },
                     headlineContent = { Text(text = "NavigationRail VerticalArrangement") }
                 )
@@ -199,7 +211,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(6) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 07") },
                     headlineContent = { Text(text = "NavigationRail Expanded State") }
                 )
@@ -210,7 +224,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(7) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 08") },
                     headlineContent = { Text(text = "PrimaryActionContent") }
                 )
@@ -221,7 +237,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(8) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 09") },
                     headlineContent = { Text(text = "Colors") }
                 )
@@ -232,7 +250,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { onSampleClick(9) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 10") },
                     headlineContent = { Text(text = "NavigationSuite") }
                 )
@@ -243,7 +263,9 @@ private fun SamplesListScreen(
                         .fillMaxWidth()
                         .clip(bottomListItemShape)
                         .clickable { onSampleClick(10) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     overlineContent = { Text(text = "Sample 11") },
                     headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
                 )

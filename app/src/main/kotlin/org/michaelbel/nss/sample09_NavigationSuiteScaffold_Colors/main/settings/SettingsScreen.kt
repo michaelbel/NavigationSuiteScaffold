@@ -87,7 +87,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Dynamic Colors") },
                     leadingContent = {
                         Icon(
@@ -112,7 +114,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable(onClick = AppSettings::toggleCustomNavigationColors),
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Custom NavigationSuiteColors") },
                     leadingContent = {
                         Icon(

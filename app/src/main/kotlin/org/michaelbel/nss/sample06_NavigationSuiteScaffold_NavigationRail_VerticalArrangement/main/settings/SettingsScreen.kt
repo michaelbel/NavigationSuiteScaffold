@@ -89,7 +89,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(middleLargeIncreasedListItemShape)
                         .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Dynamic Colors") },
                     leadingContent = {
                         Icon(
@@ -116,7 +118,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(topListItemShape)
                         .clickable { AppSettings.setNavigationArrangement(Arrangement.Top) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Arrangement.Top") },
                     leadingContent = {
                         Icon(
@@ -138,7 +142,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(middleExtraSmallListItemShape)
                         .clickable { AppSettings.setNavigationArrangement(Arrangement.Center) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Arrangement.Center") },
                     leadingContent = {
                         Icon(
@@ -160,7 +166,9 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .clip(bottomListItemShape)
                         .clickable { AppSettings.setNavigationArrangement(Arrangement.Bottom) },
-                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    ),
                     headlineContent = { Text(text = "Arrangement.Bottom") },
                     leadingContent = {
                         Icon(
