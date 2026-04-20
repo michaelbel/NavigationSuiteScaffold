@@ -7,7 +7,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
@@ -37,7 +35,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -122,153 +119,116 @@ private fun SamplesListScreen(
         ) {
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable { onSampleClick(0) },
+                    onClick = { onSampleClick(0) },
+                    overlineContent = { Text(text = "Sample 01") },
+                    shapes = ListItemDefaults.shapes(
+                        shape = middleListItemShape
+                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    overlineContent = { Text(text = "Sample 01") },
-                    headlineContent = { Text(text = "Classic Scaffold BottomBar") }
-                )
+                    )
+                ) { Text(text = "Classic Scaffold BottomBar") }
             }
-
             item {
                 Spacer(
                     modifier = Modifier.height(14.dp)
                 )
             }
-
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(topListItemShape)
-                        .clickable { onSampleClick(1) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(1) },
                     overlineContent = { Text(text = "Sample 02") },
-                    headlineContent = { Text(text = "NavigationSuiteScaffold NavigationBar") }
-                )
+                    shapes = ListItemDefaults.shapes(
+                        shape = topListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationSuiteScaffold NavigationBar") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(2) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(2) },
                     overlineContent = { Text(text = "Sample 03") },
-                    headlineContent = { Text(text = "NavigationSuiteScaffold NavigationRail") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationSuiteScaffold NavigationRail") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(3) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(3) },
                     overlineContent = { Text(text = "Sample 04") },
-                    headlineContent = { Text(text = "NavigationRail NoLabels") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationRail NoLabels") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(4) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(4) },
                     overlineContent = { Text(text = "Sample 05") },
-                    headlineContent = { Text(text = "NavigationRail Expanded") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationRail Expanded") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(5) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(5) },
                     overlineContent = { Text(text = "Sample 06") },
-                    headlineContent = { Text(text = "NavigationRail VerticalArrangement") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationRail VerticalArrangement") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(6) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(6) },
                     overlineContent = { Text(text = "Sample 07") },
-                    headlineContent = { Text(text = "NavigationRail Expanded State") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationRail Expanded State") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(7) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(7) },
                     overlineContent = { Text(text = "Sample 08") },
-                    headlineContent = { Text(text = "PrimaryActionContent") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "PrimaryActionContent") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(8) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(8) },
                     overlineContent = { Text(text = "Sample 09") },
-                    headlineContent = { Text(text = "Colors") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Colors") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { onSampleClick(9) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
+                    onClick = { onSampleClick(9) },
                     overlineContent = { Text(text = "Sample 10") },
-                    headlineContent = { Text(text = "NavigationSuite") }
-                )
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "NavigationSuite") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable { onSampleClick(10) },
+                    onClick = { onSampleClick(10) },
+                    overlineContent = { Text(text = "Sample 11") },
+                    shapes = ListItemDefaults.shapes(
+                        shape = bottomListItemShape
+                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    overlineContent = { Text(text = "Sample 11") },
-                    headlineContent = { Text(text = "NavigationSuiteScaffoldLayout") }
-                )
+                    )
+                ) { Text(text = "NavigationSuiteScaffoldLayout") }
             }
         }
     }

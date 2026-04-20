@@ -37,7 +37,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import org.michaelbel.nss.AppRoute
 import org.michaelbel.nss.boarList
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.middleListItemShape
 
 @Composable
 fun DetailsScreen(
@@ -97,7 +97,7 @@ fun DetailsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .aspectRatio(16F / 9F)
-                        .clip(middleLargeIncreasedListItemShape),
+                        .clip(middleListItemShape),
                     contentScale = ContentScale.Crop
                 )
             }

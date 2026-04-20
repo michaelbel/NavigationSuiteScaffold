@@ -2,7 +2,6 @@
 
 package org.michaelbel.nss.sample07_NavigationSuiteScaffold_NavigationRail_Expanded_State.main.settings
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
@@ -31,14 +29,13 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.FormatPaint
 import org.michaelbel.nss.Splitscreen
-import org.michaelbel.nss.AppSettings
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.middleListItemShape
 
 @Composable
 fun SettingsScreen(
@@ -78,14 +75,7 @@ fun SettingsScreen(
         ) {
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Dynamic Colors") },
+                    onClick = AppSettings::toggleDynamicColors,
                     leadingContent = {
                         Icon(
                             imageVector = FormatPaint,
@@ -97,8 +87,14 @@ fun SettingsScreen(
                             checked = dynamicColorsEnabled,
                             onCheckedChange = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = middleListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Dynamic Colors") }
             }
             item {
                 Spacer(
@@ -107,14 +103,7 @@ fun SettingsScreen(
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable(onClick = AppSettings::toggleNavigationVisible),
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Navigation Visibility") },
+                    onClick = AppSettings::toggleNavigationVisible,
                     leadingContent = {
                         Icon(
                             imageVector = Splitscreen,
@@ -126,8 +115,14 @@ fun SettingsScreen(
                             checked = navigationVisible,
                             onCheckedChange = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = middleListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Navigation Visibility") }
             }
         }
     }

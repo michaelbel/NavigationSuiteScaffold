@@ -2,7 +2,6 @@
 
 package org.michaelbel.nss.sample06_NavigationSuiteScaffold_NavigationRail_VerticalArrangement.main.settings
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
@@ -32,18 +30,16 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.FormatPaint
 import org.michaelbel.nss.VerticalAlignBottom
 import org.michaelbel.nss.VerticalAlignCenter
 import org.michaelbel.nss.VerticalAlignTop
-import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.bottomListItemShape
-import org.michaelbel.nss.middleExtraSmallListItemShape
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.middleListItemShape
 import org.michaelbel.nss.topListItemShape
 
 @Composable
@@ -84,14 +80,7 @@ fun SettingsScreen(
         ) {
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Dynamic Colors") },
+                    onClick = AppSettings::toggleDynamicColors,
                     leadingContent = {
                         Icon(
                             imageVector = FormatPaint,
@@ -103,8 +92,14 @@ fun SettingsScreen(
                             checked = dynamicColorsEnabled,
                             onCheckedChange = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = middleListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Dynamic Colors") }
             }
             item {
                 Spacer(
@@ -113,14 +108,7 @@ fun SettingsScreen(
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(topListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Top) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Arrangement.Top") },
+                    onClick = { AppSettings.setNavigationArrangement(Arrangement.Top) },
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignTop,
@@ -132,19 +120,18 @@ fun SettingsScreen(
                             selected = navigationArrangement == Arrangement.Top,
                             onClick = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = topListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Arrangement.Top") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleExtraSmallListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Center) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Arrangement.Center") },
+                    onClick = { AppSettings.setNavigationArrangement(Arrangement.Center) },
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignCenter,
@@ -156,19 +143,15 @@ fun SettingsScreen(
                             selected = navigationArrangement == Arrangement.Center,
                             onClick = null
                         )
-                    }
-                )
+                    },
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Arrangement.Center") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable { AppSettings.setNavigationArrangement(Arrangement.Bottom) },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Arrangement.Bottom") },
+                    onClick = { AppSettings.setNavigationArrangement(Arrangement.Bottom) },
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignBottom,
@@ -180,8 +163,14 @@ fun SettingsScreen(
                             selected = navigationArrangement == Arrangement.Bottom,
                             onClick = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = bottomListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Arrangement.Bottom") }
             }
         }
     }

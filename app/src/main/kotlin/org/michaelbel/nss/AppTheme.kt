@@ -3,7 +3,6 @@
 package org.michaelbel.nss
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.materialIcon
 import androidx.compose.material.icons.materialPath
@@ -141,42 +140,26 @@ fun AppTheme(
 
 val topListItemShape: RoundedCornerShape
     @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.largeIncreased.topStart,
-        topEnd = MaterialTheme.shapes.largeIncreased.topEnd,
+        topStart = MaterialTheme.shapes.large.topStart,
+        topEnd = MaterialTheme.shapes.large.topEnd,
         bottomStart = MaterialTheme.shapes.extraSmall.bottomStart,
         bottomEnd = MaterialTheme.shapes.extraSmall.bottomStart
     )
 
-val topLargeIncreasedListItemShape: RoundedCornerShape
+val middleListItemShape: RoundedCornerShape
     @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.largeIncreased.topStart,
-        topEnd = MaterialTheme.shapes.largeIncreased.topEnd,
-        bottomStart = CornerSize(0.dp),
-        bottomEnd = CornerSize(0.dp)
-    )
-
-val middleExtraSmallListItemShape: RoundedCornerShape
-    @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.extraSmall.topStart,
-        topEnd = MaterialTheme.shapes.extraSmall.topEnd,
-        bottomStart = MaterialTheme.shapes.extraSmall.bottomStart,
-        bottomEnd = MaterialTheme.shapes.extraSmall.bottomEnd
-    )
-
-val middleLargeIncreasedListItemShape: RoundedCornerShape
-    @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.largeIncreased.topStart,
-        topEnd = MaterialTheme.shapes.largeIncreased.topEnd,
-        bottomStart = MaterialTheme.shapes.largeIncreased.bottomStart,
-        bottomEnd = MaterialTheme.shapes.largeIncreased.bottomEnd
+        topStart = MaterialTheme.shapes.large.topStart,
+        topEnd = MaterialTheme.shapes.large.topEnd,
+        bottomStart = MaterialTheme.shapes.large.bottomStart,
+        bottomEnd = MaterialTheme.shapes.large.bottomEnd
     )
 
 val bottomListItemShape: RoundedCornerShape
     @Composable get() = RoundedCornerShape(
         topStart = MaterialTheme.shapes.extraSmall.topStart,
         topEnd = MaterialTheme.shapes.extraSmall.topEnd,
-        bottomStart = MaterialTheme.shapes.largeIncreased.bottomStart,
-        bottomEnd = MaterialTheme.shapes.largeIncreased.bottomEnd
+        bottomStart = MaterialTheme.shapes.large.bottomStart,
+        bottomEnd = MaterialTheme.shapes.large.bottomEnd
     )
 
 private var _github: ImageVector? = null

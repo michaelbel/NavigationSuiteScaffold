@@ -2,14 +2,12 @@
 
 package org.michaelbel.nss.sample11_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.main.about
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
@@ -27,7 +25,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
@@ -70,39 +67,37 @@ fun AboutScreen() {
         ) {
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(topListItemShape)
-                        .clickable { uriHandler.openUri("https://github.com/michaelbel") },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Star on GitHub") },
+                    onClick = { uriHandler.openUri("https://github.com/michaelbel") },
                     leadingContent = {
                         Icon(
                             imageVector = Github,
                             contentDescription = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = topListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Star on GitHub") }
             }
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(bottomListItemShape)
-                        .clickable { uriHandler.openUri("https://t.me/android_career") },
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Telegram Channel") },
+                    onClick = { uriHandler.openUri("https://t.me/android_career") },
                     leadingContent = {
                         Icon(
                             imageVector = Telegram,
                             contentDescription = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = bottomListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Telegram Channel") }
             }
         }
     }

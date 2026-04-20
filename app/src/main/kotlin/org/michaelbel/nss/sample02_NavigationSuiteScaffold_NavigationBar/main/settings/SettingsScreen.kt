@@ -2,11 +2,9 @@
 
 package org.michaelbel.nss.sample02_NavigationSuiteScaffold_NavigationBar.main.settings
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -25,13 +23,12 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.FormatPaint
-import org.michaelbel.nss.middleLargeIncreasedListItemShape
+import org.michaelbel.nss.middleListItemShape
 
 @Composable
 fun SettingsScreen() {
@@ -61,14 +58,7 @@ fun SettingsScreen() {
         ) {
             item {
                 ListItem(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(middleLargeIncreasedListItemShape)
-                        .clickable(onClick = AppSettings::toggleDynamicColors),
-                    colors = ListItemDefaults.colors(
-                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                    ),
-                    headlineContent = { Text(text = "Dynamic Colors") },
+                    onClick = AppSettings::toggleDynamicColors,
                     leadingContent = {
                         Icon(
                             imageVector = FormatPaint,
@@ -80,8 +70,14 @@ fun SettingsScreen() {
                             checked = dynamicColors,
                             onCheckedChange = null
                         )
-                    }
-                )
+                    },
+                    shapes = ListItemDefaults.shapes(
+                        shape = middleListItemShape
+                    ),
+                    colors = ListItemDefaults.colors(
+                        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                    )
+                ) { Text(text = "Dynamic Colors") }
             }
         }
     }
