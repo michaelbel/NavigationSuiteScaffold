@@ -26,6 +26,7 @@ import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScaffoldDefaults
+import androidx.compose.material3.SegmentedListItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -121,9 +122,6 @@ private fun SamplesListScreen(
                 ListItem(
                     onClick = { onSampleClick(0) },
                     overlineContent = { Text(text = "Sample 01") },
-                    shapes = ListItemDefaults.shapes(
-                        shape = middleListItemShape
-                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
@@ -131,101 +129,105 @@ private fun SamplesListScreen(
             }
             item {
                 Spacer(
-                    modifier = Modifier.height(14.dp)
+                    modifier = Modifier.height(12.dp)
                 )
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(1) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 0, count = 10),
                     overlineContent = { Text(text = "Sample 02") },
-                    shapes = ListItemDefaults.shapes(
-                        shape = topListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationSuiteScaffold NavigationBar") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(2) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 1, count = 10),
                     overlineContent = { Text(text = "Sample 03") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationSuiteScaffold NavigationRail") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(3) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 2, count = 10),
                     overlineContent = { Text(text = "Sample 04") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationRail NoLabels") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(4) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 3, count = 10),
                     overlineContent = { Text(text = "Sample 05") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationRail Expanded") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(5) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 4, count = 10),
                     overlineContent = { Text(text = "Sample 06") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationRail VerticalArrangement") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(6) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 5, count = 10),
                     overlineContent = { Text(text = "Sample 07") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationRail Expanded State") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(7) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 6, count = 10),
                     overlineContent = { Text(text = "Sample 08") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "PrimaryActionContent") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(8) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 7, count = 10),
                     overlineContent = { Text(text = "Sample 09") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Colors") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(9) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 8, count = 10),
                     overlineContent = { Text(text = "Sample 10") },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationSuite") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { onSampleClick(10) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 9, count = 10),
                     overlineContent = { Text(text = "Sample 11") },
-                    shapes = ListItemDefaults.shapes(
-                        shape = bottomListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "NavigationSuiteScaffoldLayout") }

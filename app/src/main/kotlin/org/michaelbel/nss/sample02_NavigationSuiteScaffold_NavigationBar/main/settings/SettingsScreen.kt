@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.FormatPaint
-import org.michaelbel.nss.middleListItemShape
 
 @Composable
 fun SettingsScreen() {
@@ -71,9 +70,6 @@ fun SettingsScreen() {
                             onCheckedChange = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = middleListItemShape
-                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )

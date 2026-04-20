@@ -138,26 +138,10 @@ fun AppTheme(
     )
 }
 
-val topListItemShape: RoundedCornerShape
-    @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.large.topStart,
-        topEnd = MaterialTheme.shapes.large.topEnd,
-        bottomStart = MaterialTheme.shapes.extraSmall.bottomStart,
-        bottomEnd = MaterialTheme.shapes.extraSmall.bottomStart
-    )
-
 val middleListItemShape: RoundedCornerShape
     @Composable get() = RoundedCornerShape(
         topStart = MaterialTheme.shapes.large.topStart,
         topEnd = MaterialTheme.shapes.large.topEnd,
-        bottomStart = MaterialTheme.shapes.large.bottomStart,
-        bottomEnd = MaterialTheme.shapes.large.bottomEnd
-    )
-
-val bottomListItemShape: RoundedCornerShape
-    @Composable get() = RoundedCornerShape(
-        topStart = MaterialTheme.shapes.extraSmall.topStart,
-        topEnd = MaterialTheme.shapes.extraSmall.topEnd,
         bottomStart = MaterialTheme.shapes.large.bottomStart,
         bottomEnd = MaterialTheme.shapes.large.bottomEnd
     )

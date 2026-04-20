@@ -23,6 +23,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScaffoldDefaults
+import androidx.compose.material3.SegmentedListItem
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -38,9 +39,6 @@ import org.michaelbel.nss.FormatPaint
 import org.michaelbel.nss.VerticalAlignBottom
 import org.michaelbel.nss.VerticalAlignCenter
 import org.michaelbel.nss.VerticalAlignTop
-import org.michaelbel.nss.bottomListItemShape
-import org.michaelbel.nss.middleListItemShape
-import org.michaelbel.nss.topListItemShape
 
 @Composable
 fun SettingsScreen(
@@ -93,9 +91,6 @@ fun SettingsScreen(
                             onCheckedChange = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = middleListItemShape
-                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
@@ -103,12 +98,14 @@ fun SettingsScreen(
             }
             item {
                 Spacer(
-                    modifier = Modifier.height(14.dp)
+                    modifier = Modifier.height(12.dp)
                 )
             }
             item {
-                ListItem(
+                SegmentedListItem(
+                    selected = navigationArrangement == Arrangement.Top,
                     onClick = { AppSettings.setNavigationArrangement(Arrangement.Top) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 0, count = 3),
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignTop,
@@ -121,17 +118,16 @@ fun SettingsScreen(
                             onClick = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = topListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Arrangement.Top") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
+                    selected = navigationArrangement == Arrangement.Center,
                     onClick = { AppSettings.setNavigationArrangement(Arrangement.Center) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 1, count = 3),
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignCenter,
@@ -144,14 +140,16 @@ fun SettingsScreen(
                             onClick = null
                         )
                     },
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Arrangement.Center") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
+                    selected = navigationArrangement == Arrangement.Bottom,
                     onClick = { AppSettings.setNavigationArrangement(Arrangement.Bottom) },
+                    shapes = ListItemDefaults.segmentedShapes(index = 2, count = 3),
                     leadingContent = {
                         Icon(
                             imageVector = VerticalAlignBottom,
@@ -164,10 +162,7 @@ fun SettingsScreen(
                             onClick = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = bottomListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Arrangement.Bottom") }

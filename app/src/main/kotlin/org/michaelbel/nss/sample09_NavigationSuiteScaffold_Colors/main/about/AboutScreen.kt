@@ -15,7 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ListItem
+import androidx.compose.material3.SegmentedListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -31,8 +31,6 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import org.michaelbel.nss.Github
 import org.michaelbel.nss.Telegram
-import org.michaelbel.nss.bottomListItemShape
-import org.michaelbel.nss.topListItemShape
 
 @Composable
 fun AboutScreen(
@@ -73,35 +71,31 @@ fun AboutScreen(
             verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { uriHandler.openUri("https://github.com/michaelbel") },
+                    shapes = ListItemDefaults.segmentedShapes(index = 0, count = 2),
                     leadingContent = {
                         Icon(
                             imageVector = Github,
                             contentDescription = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = topListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Star on GitHub") }
             }
             item {
-                ListItem(
+                SegmentedListItem(
                     onClick = { uriHandler.openUri("https://t.me/android_career") },
+                    shapes = ListItemDefaults.segmentedShapes(index = 1, count = 2),
                     leadingContent = {
                         Icon(
                             imageVector = Telegram,
                             contentDescription = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = bottomListItemShape
-                    ),
-                    colors = ListItemDefaults.colors(
+                    colors = ListItemDefaults.segmentedColors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
                 ) { Text(text = "Telegram Channel") }

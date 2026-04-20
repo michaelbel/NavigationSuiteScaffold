@@ -35,7 +35,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.michaelbel.nss.AppSettings
 import org.michaelbel.nss.FormatPaint
 import org.michaelbel.nss.Splitscreen
-import org.michaelbel.nss.middleListItemShape
 
 @Composable
 fun SettingsScreen(
@@ -88,9 +87,6 @@ fun SettingsScreen(
                             onCheckedChange = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = middleListItemShape
-                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
@@ -98,7 +94,7 @@ fun SettingsScreen(
             }
             item {
                 Spacer(
-                    modifier = Modifier.height(14.dp)
+                    modifier = Modifier.height(12.dp)
                 )
             }
             item {
@@ -116,9 +112,6 @@ fun SettingsScreen(
                             onCheckedChange = null
                         )
                     },
-                    shapes = ListItemDefaults.shapes(
-                        shape = middleListItemShape
-                    ),
                     colors = ListItemDefaults.colors(
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                     )
