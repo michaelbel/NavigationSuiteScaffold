@@ -57,7 +57,7 @@ fun AboutScreen(
                 end = 16.dp,
                 bottom = bottomPadding
             ),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(ListItemDefaults.SegmentedGap)
         ) {
             item {
                 SegmentedListItem(

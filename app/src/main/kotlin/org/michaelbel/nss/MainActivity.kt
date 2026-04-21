@@ -116,7 +116,7 @@ private fun SamplesListScreen(
                 end = 16.dp,
                 bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
             ),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(ListItemDefaults.SegmentedGap)
         ) {
             item {
                 ListItem(

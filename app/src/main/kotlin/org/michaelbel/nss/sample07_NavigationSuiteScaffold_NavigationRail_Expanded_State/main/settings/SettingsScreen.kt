@@ -70,7 +70,7 @@ fun SettingsScreen(
                 end = 16.dp,
                 bottom = if (isNavigationRail) navBarBottom else 16.dp
             ),
-            verticalArrangement = Arrangement.spacedBy(2.dp)
+            verticalArrangement = Arrangement.spacedBy(ListItemDefaults.SegmentedGap)
         ) {
             item {
                 ListItem(
