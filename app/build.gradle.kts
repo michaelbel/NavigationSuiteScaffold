@@ -47,7 +47,6 @@ android {
 
     buildTypes {
         debug {
-            isDebuggable = true
             isMinifyEnabled = true
             isShrinkResources = true
             signingConfig = signingConfigs.getByName("debug")
