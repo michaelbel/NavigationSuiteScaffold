@@ -1,15 +1,10 @@
-# Folders
 .claude
 .gradle
+.idea/*
+!.idea/icon.svg
 .kotlin
 build
 build-cache
 generated
-
-# .idea
-.idea/*
-!.idea/icon.svg
-
-# Files
 /.github/keystore.properties
 local.properties
