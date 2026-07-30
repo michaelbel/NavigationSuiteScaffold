@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.nss.sample04_NavigationSuiteScaffold_NavigationRail_NoLabels.main
 
 import androidx.compose.foundation.layout.fillMaxWidth

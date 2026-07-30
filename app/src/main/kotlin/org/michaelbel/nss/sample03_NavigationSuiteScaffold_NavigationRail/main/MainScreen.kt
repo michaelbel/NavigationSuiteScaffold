@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.nss.sample03_NavigationSuiteScaffold_NavigationRail.main
 
 import androidx.compose.material.icons.Icons

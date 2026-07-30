@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.nss.sample01_Scaffold_BottomBar.main
 
 import androidx.compose.foundation.layout.fillMaxSize

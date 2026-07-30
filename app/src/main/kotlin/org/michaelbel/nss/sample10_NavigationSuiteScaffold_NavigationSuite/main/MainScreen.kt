@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.nss.sample10_NavigationSuiteScaffold_NavigationSuite.main
 
 import androidx.compose.foundation.layout.Box

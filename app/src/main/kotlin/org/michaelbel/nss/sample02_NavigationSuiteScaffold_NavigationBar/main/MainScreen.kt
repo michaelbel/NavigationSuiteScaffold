@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
-
 package org.michaelbel.nss.sample02_NavigationSuiteScaffold_NavigationBar.main
 
 import androidx.compose.foundation.layout.fillMaxWidth

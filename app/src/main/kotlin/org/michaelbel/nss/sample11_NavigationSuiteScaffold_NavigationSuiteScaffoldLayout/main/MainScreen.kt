@@ -1,9 +1,13 @@
-@file:OptIn(ExperimentalMaterial3AdaptiveApi::class, ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
 
 package org.michaelbel.nss.sample11_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.main
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalWideNavigationRail
@@ -28,13 +32,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.filled.Menu
-import org.michaelbel.nss.MenuOpen
 import kotlinx.coroutines.launch
+import org.michaelbel.nss.MenuOpen
 import org.michaelbel.nss.Tabs
 import org.michaelbel.nss.sample11_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.main.about.AboutScreen
 import org.michaelbel.nss.sample11_NavigationSuiteScaffold_NavigationSuiteScaffoldLayout.main.home.HomeScreen
