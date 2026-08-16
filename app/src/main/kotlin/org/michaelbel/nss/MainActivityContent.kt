@@ -7,20 +7,13 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.WindowInsetsSides
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.only
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.plus
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ScaffoldDefaults
 import androidx.compose.material3.SegmentedListItem
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -83,24 +76,17 @@ fun MainActivityContent() {
                             ),
                             scrollBehavior = scrollBehavior
                         )
-                    },
-                    contentWindowInsets = ScaffoldDefaults.contentWindowInsets.only(WindowInsetsSides.Horizontal)
+                    }
                 ) { innerPadding ->
                     LazyColumn(
-                        modifier = Modifier
-                            .padding(innerPadding)
-                            .fillMaxSize(),
-                        contentPadding = PaddingValues(
-                            start = 16.dp,
-                            top = 16.dp,
-                            end = 16.dp,
-                            bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-                        ),
+                        modifier = Modifier.fillMaxSize(),
+                        contentPadding = innerPadding + PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(ListItemDefaults.SegmentedGap)
                     ) {
                         item {
-                            ListItem(
+                            SegmentedListItem(
                                 onClick = { backStack.add(Sample01) },
+                                shapes = ListItemDefaults.segmentedShapes(index = 0, count = 1),
                                 overlineContent = { Text(text = "Sample 01") },
                                 colors = ListItemDefaults.colors(
                                     containerColor = MaterialTheme.colorScheme.surfaceContainerHighest

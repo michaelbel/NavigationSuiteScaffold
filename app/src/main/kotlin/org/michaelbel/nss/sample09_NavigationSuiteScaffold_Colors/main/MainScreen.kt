@@ -70,7 +70,8 @@ fun MainScreen(
             ShortNavigationBarItemDefaults.colors(
                 selectedIndicatorColor = MaterialTheme.colorScheme.primary,
                 selectedIconColor = MaterialTheme.colorScheme.onPrimary,
-                selectedTextColor = MaterialTheme.colorScheme.primary,
+                selectedTextColorTopIconPosition = MaterialTheme.colorScheme.primary,
+                selectedTextColorStartIconPosition = MaterialTheme.colorScheme.primary,
                 unselectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 unselectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer
             )
